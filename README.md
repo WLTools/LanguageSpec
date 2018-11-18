@@ -1,5 +1,11 @@
 # WLTools Language Spec
 
+## The specification lives in the wiki
+
+If you wish to view or contribute to the language spec, you probably want the [LanguageSpec.wiki](https://github.com/WLTools/LanguageSpec.wiki.git) repository.
+
+## Then what is this repo?
+
 * https://github.com/WLTools/LanguageSpec
 * https://github.com/WLTools/LanguageSpec.git
 
