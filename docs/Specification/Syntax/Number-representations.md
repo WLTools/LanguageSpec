@@ -27,11 +27,12 @@ Wolfram Language has a curiously flexible syntax for number literals. We will bu
 
 ### Signs in a Number Literal
 
-The sign of a number, that is, whether the number is positive, zero, or negative, is manifestly intrinsic to the semantics of the number. However, a number's sign, when given explicitly, is treated syntactically as an operator. Indeed, there are several operators effecting the sign of a number: `Minus`, `UnaryPlus`, `PlusMinus`, and `MinusPlus`. These operators may even be nested arbitrarily, as in the expression `-+7`. Thus, treating a negative sign in, say, `-7` as an operator is syntactically the more consistent alternative. As a consequence, all number literals in Wolfram Language are necessarily nonnegative according to this spec.
+The sign of a number, that is, whether the number is positive, zero, or negative, is manifestly intrinsic to the semantics of the number. However, a number's sign, when given explicitly, is treated syntactically as an operator. Indeed, there are several operators effecting the sign of a number: `#!wl Minus`, `#!wl UnaryPlus`, `#!wl PlusMinus`, and `#!wl MinusPlus`. These operators may even be nested arbitrarily, as in the expression `#!wl -+7`. Thus, treating a negative sign in, say, `#!wl -7` as an operator is syntactically the more consistent alternative. As a consequence, all number literals in Wolfram Language are necessarily nonnegative according to this spec.
 
-The exception to this rule applies not to number literals but rather to the decorations on number literals: the precision, accuracy, and exponent all accept a single (unnested) optional `+` or `-`.
+The exception to this rule applies not to number literals but rather to the decorations on number literals: the precision, accuracy, and exponent all accept a single (unnested) optional `#!wl +` or `#!wl -`.
 
-<span class="compatibility">[[Caution.svg | height=32px]] Mathematica only accepts the ASCII `-` character and its character code synonyms `\:002d` and `\.2d` in number literal forms. The Unicode character form `\:2212`, named character `\[Minus]`, and corresponding Unicode literal `−` (which renders identically to ASCII `-`) are not allowed within number literal forms. This spec requires complying implementations to accept the ASCII `-` in number literal decorations. However, implementations may also accept Unicode `Minus` anywhere an ASCII `-` may appear. (There is no Unicode equivalent to `+` that Mathematica recognizes, so `+` does not have this issue.)</span>
+!!! warning "Compatibility Warning"
+	Mathematica only accepts the ASCII `-` character and its character code synonyms `\:002d` and `\.2d` in number literal forms. The Unicode character form `\:2212`, named character `#!wl \[Minus]`, and corresponding Unicode literal `#!wl −` (which renders identically to ASCII `#!wl -`) are not allowed within number literal forms. This spec requires complying implementations to accept the ASCII `#!wl -` in number literal decorations. However, implementations may also accept Unicode `#!wl Minus` anywhere an ASCII `#!wl -` may appear. (There is no Unicode equivalent to `#!wl +` that Mathematica recognizes, so `#!wl +` does not have this issue.)
 
 ### Digits
 
@@ -76,12 +77,12 @@ NumberInBase: DIGIT+ '^^' NonDecimalNumber; // Additional constraints below.
 
 We observe again that a negative sign is not included in these definitions.
 
-The number preceding the `^^` [[pseudo-operator|Pseudo-operators]] specifies the base in which the following digit sequence is to be interpreted. The `NumberInBase` production must satisfy the following additional constraints:
+The number preceding the `^^` [pseudo-operator](Pseudo-operators.md) specifies the base in which the following digit sequence is to be interpreted. The `NumberInBase` production must satisfy the following additional constraints:
 
 1. The `^^` must be preceded by a base that is an integer between 2 and 36, itself expressed in base 10, though the base may have arbitrarily many leading zeros.
-2. The `NonDecimalNumber` following `^^` may contain only digits compatible with the base. Thus a number in base *n* consists of digits corresponding to the decimal numbers 0 to *n* -1, and each digit greater than 9 is represented by a letter according to the following table.
+2. The `NonDecimalNumber` following `^^` may contain only digits compatible with the base. Thus a number in base $n$ consists of digits corresponding to the decimal numbers $0$ to $n -1$, and each digit greater than $9$ is represented by a letter according to the following table.
 
-```c
+```wl
 10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
 ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕   ↕
 a   b   c   d   e   f   g   h   i   j   k   l   m   n   o   p   q   r   s   t   u   v   w   x   y   z
@@ -89,7 +90,7 @@ a   b   c   d   e   f   g   h   i   j   k   l   m   n   o   p   q   r   s   t   
 
 #### Examples
 
-```mathematica
+```wl
 2^^101.101
 (* 5.625 *)
 
@@ -102,7 +103,7 @@ a   b   c   d   e   f   g   h   i   j   k   l   m   n   o   p   q   r   s   t   
 
 #### Non Examples
 
-```mathematica
+```wl
 1^^0.00
 (* $Failed *)
 
@@ -119,7 +120,8 @@ a   b   c   d   e   f   g   h   i   j   k   l   m   n   o   p   q   r   s   t   
 (* Syntax::tsntxi: "10^^-35" is incomplete; more input is needed. *)
 ```
 
-The output in the non examples above are those given by Mathematica v11.3.0. Implementations are encouraged to provide more consistently helpful error messages, especially for the last non example.
+!!! info
+	The output in the non examples above are those given by Mathematica v11.3.0. Implementations are encouraged to provide more consistently helpful error messages, especially for the last non example.
 
 ### Specifying numeric precision and accuracy.
 
@@ -135,12 +137,13 @@ numberLiteralPrecision
 
 Note that if a sign is given for precision, it must be followed by a `DecimalNumber`.
 
-<span class="compatibility">[[Caution.svg | height=32px]] Mathematica's `Precision` and `Accuracy` functions return `∞`. However, `∞` cannot be used in a number literal.</span>
+!!! warning
+	Mathematica's `Precision` and `Accuracy` functions return `∞`. However, `∞` cannot be used in a number literal.
 
 
 #### Examples
 
-```mathematica
+```wl
 123`
 (* 123. *)
 
@@ -165,7 +168,7 @@ Note that if a sign is given for precision, it must be followed by a `DecimalNum
 
 #### Non Examples
 
-```mathematica
+```wl
 16^^9fe.c3`\[Minus]7 (* Treated as subtraction. *)
 (* 2551.76 *)
 
@@ -180,10 +183,18 @@ Note that if a sign is given for precision, it must be followed by a `DecimalNum
 (* Syntax::tsntxi: "2.\[Minus]7" is incomplete; more input is needed. *)
 
 2`+
-(* Syntax::tsntxi: "2.^-" is incomplete; more input is needed. *)
+(* Syntax::tsntxi: "2.+" is incomplete; more input is needed. *)
 
 2`-
-(* Syntax::tsntxi: "2.^-" is incomplete; more input is needed. *)
+(* Syntax::tsntxi: "2.-" is incomplete; more input is needed. *)
+
+3``+
+(* Syntax::sntxf: "3" cannot be followed by "``+". *)
+(* Syntax::tsntxi: "3.+" is incomplete; more input is needed. *)
+
+3``-
+(* Syntax::sntxf: "3" cannot be followed by "``-". *)
+(* Syntax::tsntxi: "3.-" is incomplete; more input is needed. *)
 
 3`\[Infinity] (* Interpreted as 3.0 * \[Infinity] *)
 (* ∞ *)
@@ -209,7 +220,7 @@ Observe that
 
 #### Examples
 
-```mathematica
+```wl
 3.98`5*^3
 (* 3980.0 *)
 
@@ -228,7 +239,7 @@ Observe that
 
 #### Non Examples
 
-```mathematica
+```wl
 1.0*^1.9 (* Parsed by FE as (1.0*^1)*0.9. *)
 (* General::ifexp: The exponent 1.9 is not an integer.
 Syntax::sntxb: Expression cannot begin with "1.0*^1.9". *)
@@ -263,25 +274,28 @@ numberLiteral
 	;
 ```
 
-<span class="compatibility">[[Caution.svg | height=32px]] Mathematica automatically interprets number literals, discarding the original input form in most cases. Consequently, there is no `FullForm` representation of number literals. One cannot extract, for example, the base of a number. Implementations may emulate Mathematica's behavior or maintain the input representation of a number literal.</span>
+!!! warning "Compatibility Warning"
+	Mathematica automatically interprets number literals, discarding the original input form in most cases. Consequently, there is no `FullForm` representation of number literals. One cannot extract, for example, the base of a number. Implementations may emulate Mathematica's behavior or maintain the input representation of a number literal.
 
-<span class="compatibility">[[Caution.svg | height=32px]] Mathematica does not allow any whitespace whatsoever within a number literal expression.</span>
+!!! warning "Compatibility Warning"
+	Mathematica does not allow any whitespace whatsoever within a number literal expression.
 
 ## A Regular Expression Accepting Number Literals
 
 The following regular expression matches all Wolfram Language number literals without special character input forms. However, if a base is specified, it does not require that the given digits are compatible with the base, but those are the only invalid strings it accepts.
 
-```javascript
+```perl
 ((([2-9]|[1-2]\d|[3][0-5])\^\^(\w*\.\w+|\w+\.\w*|\w+))|(\d*\.\d+|\d+\.\d*|\d+))((``(\+|-)?(\d*\.\d+|\d+\.\d*|\d+))|(`((\+|-)?(\d*\.\d+|\d+\.\d*|\d+))?))?(\*\^(\+|-)?\d+)?
 ```
 
+!!! important
+	This regular expression does not require that the digits be compatible with the given base. For example, it will match `#!wl 7^^2a` even though `a` is not a digit in base 7.
+
 ## Additional Examples and Non Examples
 
-### Using special character input forms
+### Examples using special character input forms
 
-#### Examples
-
-```mathematica
+```wl
 4\.2b5 (* ASCII plus is 0x2B. *)
 (* 9 *)
 
@@ -322,7 +336,26 @@ The following regular expression matches all Wolfram Language number literals wi
 (* 15 *)
 ```
 
-### Non Examples
+### Example due to Richard Fateman
+
+This example is from:
+
+> Richard J. Fateman, "A review of Mathematica," _Journal of Symbolic Computation,_ vol. 13, iss. 5, May 1992, p. 545-579. doi: [10.1016/s0747-7171(10)80011-2](https://doi.org/10.1016/S0747-7171%2810%2980011-2)
+
+
+```wl
+In[1]:= 4/.4->5
+Out[1]= 10. -> 5
+
+In[2]:= 4/ .4->5
+Out[2]= 10. -> 5
+
+In[3]:= 4 /.4->5
+Out[3]= 10. -> 5
+
+In[4]:= 4/. 4->5
+Out[4]= 5
+```
 
 <hr>
 

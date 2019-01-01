@@ -1,4 +1,4 @@
-site_name: WL Language Specification
+site_name: Wolfram Language Specification
 site_author: Robert Jacobson
 site_description: Wolfram Language Specification
 repo_url: https://github.com/WLTools/LanguageSpec
@@ -7,24 +7,28 @@ repo_url: https://github.com/WLTools/LanguageSpec
 # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
 
 theme:
-#    name: flatly
-#    include_sidebar: true
-    name: null
-    custom_dir: 'custom_theme'
+    name: readthedocs
+    include_homepage_in_sidebar: false
+    prev_next_buttons_location: 'both'
+    navigation_depth: 4
+    sticky_navigation: true
+    titles_only: false
+    collapse_navigation: false
     highlightjs: false
-    latex: true
-#    name: bootstrap
-#    custom_dir: theme_overides
 
 extra_css:
-  - extras/mma.css
-
-# extra_javascript: ['extras/fixnav.js']
-#extra_css: ['extras/fixnav.css']
+    - extras/material-icons.css
+    - extras/admonitions.css
+    - extras/mma.css
+    - extras/fixes.css
+    - 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css'
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js'
+    - extras/usekratex.js
 
 nav:
     - 'Language Specification':
-        - "Index" : 'Specification/index.md'
+        - 'Index': 'Specification/index.md'
         - 'Syntax':
             - 'Index': 'Specification/Syntax/index.md'
             - 'Number Representations': 'Specification/Syntax/Number-representations.md'
@@ -34,35 +38,28 @@ nav:
             - 'Index': 'Specification/Semantics/index.md'
             - 'Number Literals': 'Specification/Semantics/Number-literal-semantics.md'
         - 'Interfaces':
-            - 'Index' : 'Specification/Interfaces/index.md'
+            - 'Index': 'Specification/Interfaces/index.md'
         - 'Standard Library':
             - 'Index': 'Specification/StandardLibrary/index.md'
-
-
-extra:
-    'topnav':
-        - 'Language Specification': 'Specification/index.md'
-        - 'Resources':
-            - "ToDo's": 'Resources/index.md'
-            - 'Exploring Mathematica': 'Resources/Exploring-Mathematica.md'
-            - 'List of WL Projects': 'Resources/List-of-W-Language-Projects.md'
-            - 'Homeless Content': 'Resources/Homeless-content.md'
-        - 'Contributing': 'Contributing/index.md'
-#            - 'How to Contribute': 'Contributing/index.md'
-#            - 'Style Guide': 'Contributing/Style-Guide.md'
+    - 'Resources':
+        - 'Index': 'Resources/index.md'
+        - 'Exploring Mathematica': 'Resources/Exploring-Mathematica.md'
+        - 'List of WL Projects': 'Resources/List-of-W-Language-Projects.md'
+        - 'Homeless Content': 'Resources/Homeless-content.md'
+    - 'Contributing':
+       - 'How to Contribute': 'Contributing/index.md'
+       - 'Style Guide': 'Contributing/Style-Guide.md'
 
 markdown_extensions:
     - toc:
         permalink: True
     - sane_lists
-    - wikilinks
     - admonition
     - footnotes
     - pymdownx.arithmatex:
         generic: true
     - pymdownx.highlight:
         use_pygments: true
-        css_class: 'language-mma'
         guess_lang: false
     - pymdownx.betterem:
         smart_enable: all

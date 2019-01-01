@@ -2,11 +2,13 @@
 
 This pages points to ways of exploring Mathematica's implementation of Wolfram Language.
 
+To access the definition of a built-in function, simply use `PrintDefinitions` from the `GeneralUtilities` package. (You don’t need the [Spelunking Tools](https://mathematica.stackexchange.com/questions/1742/what-is-the-most-convenient-way-to-read-definitions-of-in-memory-symbols-when-we/15948#15948) anymore.)
 
-> You don’t need the spelunking tools anymore. Simply use `PrintDefinitions` from the `GeneralUtilities` package.
->
-* [Spelunking tools](https://mathematica.stackexchange.com/questions/1742/what-is-the-most-convenient-way-to-read-definitions-of-in-memory-symbols-when-we/15948#15948) Thread on Mathematica.StackExchange.com.
-* Code from the above on GitHub: https://github.com/szhorvat/Spelunking
+```wl
+In[1]:= GeneralUtilities`PrintDefinitions[GeneralUtilities`PrintDefinitions]
+
+Out[1]= NotebookObject[GeneralUtilities`PrintDefinitions]
+```
 
 # Parsing Expressions
 
@@ -16,7 +18,7 @@ The FE creates a box representation of your input as you type. The box represent
 
 Using `ToExpression` or the command line interface uses the kernel directly to parse the expression, circumventing the FE's parser. To make sure your expression is parsed by the kernel even if you are working in a notebook, do this:
 
-```mathematica
+```wl
 In[10]:= FullForm[ToExpression["Hold[a|b*c]"]]
 
 Out[10]//FullForm= Hold[Alternatives[a,Times[b,c]]]
@@ -24,7 +26,7 @@ Out[10]//FullForm= Hold[Alternatives[a,Times[b,c]]]
 
 It matters how you use `ToExpression`. Compare:
 
-```mathematica
+```wl
 In[1]:= ToExpression["a;;\[Intersection]a\[SquareIntersection];;a", StandardForm, Hold]//FullForm
 
 Syntax::sntxf: "a;; ⋂ a ⊓" cannot be followed by ";;a".
@@ -37,7 +39,7 @@ Out[1]//FullForm= $Failed
 
 gives a different result from
 
-```mathematica
+```wl
 In[1]:= ToExpression["Hold[a;;\[Intersection]a\[SquareIntersection];;a]"]//FullForm
 
 Out[1]//FullForm= Hold[Span[SquareIntersection[Intersection[Span[a, All], a], System`Private`DummyId], a]]
@@ -49,14 +51,14 @@ in both the FE and command line.
 
 To ask the FE to interpret an expression given as a `String`, do this:
 
-```mathematica
+```wl
 FEToExpression[s_String] :=
  MakeExpression@FrontEndExecute@FrontEnd`ReparseBoxStructurePacket[s]
 ```
 
 Alternatively, you can use the `UndocumentedTestFEParserPacket` function:
 
-```mathematica
+```wl
 FEToExpression[s_String] := MakeExpression[
     MathLink`CallFrontEnd[
         FrontEnd`UndocumentedTestFEParserPacket[s, False]
