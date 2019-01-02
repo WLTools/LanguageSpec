@@ -1,8 +1,6 @@
 # Interfaces
 
+This is what still needs documenting. [Want to help](../../Contributing/)?
 
-* [[Notebook]]
-* [[REPL]]
-* [[Applications]]
-* [[WSTP]]
-* [[WXF]]
+!!! abstract "Specification Coverage"
+{!Specification/Interfaces/tasks.md!}

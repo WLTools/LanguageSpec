@@ -1,5 +1,6 @@
 site_name: Wolfram Language Specification
 site_author: Robert Jacobson
+copyright: 'Copyright &copy; 2018&ndash;2019 Robert Jacobson'
 site_description: Wolfram Language Specification
 repo_url: https://github.com/WLTools/LanguageSpec
 
@@ -8,6 +9,7 @@ repo_url: https://github.com/WLTools/LanguageSpec
 
 theme:
     name: readthedocs
+    custom_dir: docs/extras/
     include_homepage_in_sidebar: false
     prev_next_buttons_location: 'both'
     navigation_depth: 4
@@ -17,14 +19,15 @@ theme:
     highlightjs: false
 
 extra_css:
-    - extras/material-icons.css
-    - extras/admonitions.css
-    - extras/mma.css
-    - extras/fixes.css
+    - extras/css/material-icons.css
+    - extras/css/admonitions.css
+    - extras/css/mma.css
+    - extras/css/fixes.css
+    - extras/css/tasklist.css
     - 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css'
 extra_javascript:
     - 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js'
-    - extras/usekratex.js
+    - extras/js/usekratex.js
 
 nav:
     - 'Language Specification':
@@ -53,7 +56,9 @@ nav:
 markdown_extensions:
     - toc:
         permalink: True
-    - sane_lists
+    # - sane_lists
+    - markdown_include.include:
+        base_path: docs
     - admonition
     - footnotes
     - pymdownx.arithmatex:

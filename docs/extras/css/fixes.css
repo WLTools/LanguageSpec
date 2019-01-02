@@ -1,0 +1,98 @@
+/* Things that don't change when we switch to phone mode. */
+@media not screen and (max-width: 768px){
+    /* Width of the side. Default is 300 px. */
+    .wy-side-nav-search,
+    .wy-nav-side,
+    div.rst-versions{
+        width: 250px;
+    }
+    section.wy-nav-content-wrap{
+        margin-left: 250px;
+    }
+
+    /* Inner shaddow on page content */
+    div.wy-nav-content{
+        box-shadow: inset 10px 0 10px -10px #000000;
+    }
+}
+
+/* Hide the scrollbar */
+.wy-side-scroll::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+/* Make sure the last item in the left menu is not obscured. */
+.wy-nav-side {
+    padding-bottom: 3em;
+}
+
+/* Color Scheme */
+/* Color of the top bar. */
+.wy-side-nav-search{
+    background: Maroon;
+}
+nav.wy-nav-top{
+    background: Maroon;
+}
+/* Code block background  */
+div.highlight {
+    background: #f0f3f4;
+}
+/* Inline code background and border */
+code, .rst-content code {
+    /* border-left-color: #c8ced0; */
+    border-color: #d6dadc;
+    border-radius: 2px;
+    background-color: hsl(195, 7%, 97%);
+}
+
+
+/* Link colors */
+div.wy-nav-content a:link {
+    color: #990000;
+}
+div.wy-nav-content a:active {
+    color: #c2a3a3;
+}
+div.wy-nav-content  a:hover {
+    color: #bf4040;
+}
+div.wy-nav-content  a:visited {
+    color: #ac5353;
+}
+
+/* This is a hack to keep Chrome from clipping off the right border of inline code blocks. */
+code.highlight::after {
+    /* Zero width space */
+    content: "\200B";
+}
+
+/* Footnotes.  */
+div.footnote li {
+    display: block;
+    position: relative;
+    padding-bottom: 10px;
+    counter-increment: inst;
+}
+div.footnote li::before {
+    content: counter(inst) ". ";
+    position: absolute;
+    font-size: 8pt;
+    left: -13pt;
+    top: -1pt;
+}
+
+/* Shoutouts - invisible. */
+div#shoutouts {
+    display:none;
+    font-size: 8pt;
+    text-align: right;
+}
+
+/* Copyright and license. */
+div.contentinfo, div.license {
+    text-align: right;
+    display: inline;
+    font-size: 8pt;
+}

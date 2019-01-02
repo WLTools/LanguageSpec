@@ -1,88 +1,26 @@
 # WLTools: Language Specification
 
-The purpose of this wiki is to rigorously describe Wolfram Language to assist authors of Wolfram Language tools and students of programming languages. It is not intended as user documentation or a programming tutorial.
+The purpose of this wiki is to rigorously describe Wolfram Language to assist authors of Wolfram Language tools and students of programming languages. Despite its widespread use in academia and industry, **Wolfram Language has no formal specification**. This website is an attempt to fix that. If you are looking for [user documentation](https://reference.wolfram.com/language/) or a [programming tutorial](http://www.wolfram.com/language/elementary-introduction/2nd-ed/), you are in the wrong place.
 
-We invite contributions from anyone. Please read the [[Style Guide]] first. A good place to start is the catch-all page for [[To-Do's and homeless content|Homeless content]].
+Would you like to help construct a language specification for Wolfram Language? We invite contributions from anyone. It's as easy as clicking "<a href="https://github.com/WLTools/LanguageSpec/edit/master/docs/index.md" class="icon icon-github"> Edit on GitHub</a>" and writing some [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). A good place to start is the [Contributing](Contributing/index.md) page.
+
+Hit us up on...
+
+* **Slack Workspace:** https://wolfr.am/y0c73dZg
+* **GitHub:** [https://github.com/WLTools](https://github.com/WLTools) Unfortunately, GitHub requires organization members to be "invited" by email or GitHub username, but I intend it to be open to anyone who wishes to participate. Hit us up on Slack.
 
 ## Table of Contents
-* Language Specification
-    * [[Syntax]]
-        * [[Primitives]]
-            * [[Strings]]
-            * [[Number representations]]
-            * [[Symbols]] (identifiers)
-            * [[Special character representations]]
-        * [[Operators]]
-            * [[Variadic forms]]
-            * [[Operators with a built-in meaning]]
-            * [List of all operators with precedence, associativity, affix, and arity](https://rawgit.com/wiki/WLTools/LanguageSpec/OperatorTable.html)
-            * [[Two-dimensional "operators"|Two-dimensional operators]]
-            * [[FullForm]] (S-expressions)
-            * [[Pseudo-operators]]
-        * [[Formatting and whitespace]]
-        * [[Box sublanguage]]
-        * [[Issues and inconsistencies]]
-            * [[Precedence]]
-            * [[FullForm interpretation]]
-            * [[Nonexpression objects]] ("atomic functions")
-            * [[Bugs]]
-    * [[Semantics]]
-        * [[Symbol properties]]
-            * [[OwnValues]]
-            * [[DownValues, UpValues]]
-            * [[DefaultValues]]
-            * [[Options]]
-            * [[Attributes]]
-            * [[Messages]]
-            * [[SubValues]]
-            * [[NValues]]
-            * [[FormatValues]]
-        * [[Scoping rules]]
-            * [[Scoping operators]]
-            * [[Contexts]]
-            * [[&lambda; calculus semantics]]
-            * [[Packages]]
-        * [[Pattern matching]]
-            * [[Patterns]]
-            * [[Types of equality]]
-            * [[Options]]
-        * [[Evaluation]]
-        * [[Types]]
-            - [[Number literal semantics]]
-        * [[Messages]]
-        * [[Homoiconicity]]
-    * [[Built-in Functions / Standard Library|Standard Library]]
-        * [[Manipulating primitives and expressions]]
-            * [["List" processing and functional programming|List processing]]
-            * [[Homoiconic functions]]
-            * [[Introspection]]
-            * [[Strings]]
-            * [[Numbers]]
-        * [[Control flow]]
-        * [[Controlling evaluation]]
-        * [[IO]]
-        * [[Mathematics]]
-        * [[Graphics]]
-        * [[UI]]
-        * [[Typesetting]]
-        * [[System and Environment]]
-            * [[Autoevaluating symbols]]
-    * [[Interfaces]]
-        * [[Notebook]]
-        * [[REPL]]
-        * [[Applications]]
-        * [[WSTP]]
-        * [[WXF]]
 
-* [[Resources for implementors]]
-    * [[General advice for implementors]]
-    * [[Test suite derived from this wiki]]
-    * [[Implementing pattern matching]]
-        * [[Python]]
-        * [[Go]]
-        * [[ML-like languages]]
-    * [[Parsing strategies]]
-    * [[Functional language implementation]]
-    * [[WL code highlighters and editors]]
+- [ ] Language Specification
+    - [ ] Syntax
+{!Specification/Syntax/tasks.md!}
+    - [ ] Semantics
+{!Specification/Semantics/tasks.md!}
+    - [ ] Standard Library
+{!Specification/StandardLibrary/tasks.md!}
+    - [ ] Interfaces
+{!Specification/Interfaces/tasks.md!}
+- [ ] Resources for implementors
+{!Resources/tasks.md!}
 
 This website and its authors are not affiliated with Wolfram LLC in any way.

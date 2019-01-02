@@ -1,18 +1,6 @@
 # Standard Library
 
+This is what still needs documenting. [Want to help](../../Contributing/)?
 
-* [[Manipulating primitives and expressions]]
-    * [["List" processing and functional programming|List processing]]
-    * [[Homoiconic functions]]
-    * [[Introspection]]
-    * [[Strings]]
-    * [[Numbers]]
-* [[Control flow]]
-* [[Controlling evaluation]]
-* [[IO]]
-* [[Mathematics]]
-* [[Graphics]]
-* [[UI]]
-* [[Typesetting]]
-* [[System and Environment]]
-    * [[Autoevaluating symbols]]
+!!! abstract "Specification Coverage"
+{!Specification/StandardLibrary/tasks.md!}

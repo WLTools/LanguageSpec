@@ -1,3 +1,5 @@
+# List of Independent Wolfram Language Projects
+
 ## Computer Algebra Systems and Term Rewriters
 
 ### Active
@@ -25,5 +27,4 @@
 
 ### Inactive
 
-* [Mateusz Paprocki's Mathematica Parser in Scala](https://github.com/mattpap/mathematica-parser): "A library for parsing Mathematica's programming language written in Scala. It uses parser combinators and packrat parsers from Scala's standard library. Currently only a subset of Mathematica's language is supported." MIT Licensed. 
-
+* [Mateusz Paprocki's Mathematica Parser in Scala](https://github.com/mattpap/mathematica-parser): "A library for parsing Mathematica's programming language written in Scala. It uses parser combinators and packrat parsers from Scala's standard library. Currently only a subset of Mathematica's language is supported." MIT Licensed.

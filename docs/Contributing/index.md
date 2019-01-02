@@ -1,12 +1,18 @@
 # How to Contribute
 
-Would you like to help construct a language specification for Wolfram Language? It's as easy as writing some [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+Would you like to help construct a language specification for Wolfram Language? It's as easy as clicking "<a href="https://github.com/WLTools/LanguageSpec/edit/master/docs/index.md" class="icon icon-github"> Edit on GitHub</a>" and writing some [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
+Just click on the index page of any category to find a place to start. If you have content but don't yet know where it should go, put it in the [Homeless Content page](Homeless-content.md).
+
+
+Hit us up on...
 
 * **Slack Workspace:** https://wolfr.am/y0c73dZg
 * **GitHub:** [https://github.com/WLTools](https://github.com/WLTools) Unfortunately, GitHub requires organization members to be "invited" by email or GitHub username, but I intend it to be open to anyone who wishes to participate. Hit us up on Slack.
 
-
 ## Writing Content
+
+If you do not yet have write access to this repository, you should use the usual GitHub workflow outlined below.
 
 ### Get the Content
 
@@ -39,7 +45,7 @@ The site is statically generated with [MkDocs](https://www.mkdocs.org/). We use 
 MkDocs is Python based, so we need a few `pip install`'s. As usual, you will want to create a new Python 3 virtual environment. Then install MkDocs and a couple of libraries for code highlighting and Markdown extensions:
 
 ```bash
-$ pip install mkdocs pygments pymdown-extensions
+$ pip install mkdocs pygments pymdown-extensions markdown-include
 ```
 
 If you haven't already, fork the [repository on GitHub](https://github.com/WLTools), and grab a local copy of your fork:
