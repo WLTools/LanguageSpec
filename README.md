@@ -1,30 +1,9 @@
-# WLTools Language Spec
+# WLTools Wolfram Language Specification
 
-## The specification lives in the wiki
+You are looking at the source repository for the [WLTools Wolfram Language Specification](https://wltools.github.io/LanguageSpec/). What is it? Click the link to find out. Want to know how to contribute? Head on over to the [How to Contribute page](https://wltools.github.io/LanguageSpec/Contributing/).
 
-If you wish to view or contribute to the language spec, you probably want the [LanguageSpec.wiki](https://github.com/WLTools/LanguageSpec.wiki.git) repository.
+The source to the specification is in the `docs` directory. The website is generated with MKDocs.
 
-## Then what is this repo?
+<hr>
 
-* https://github.com/WLTools/LanguageSpec
-* https://github.com/WLTools/LanguageSpec.git
-
-This is the companion repository to the [LanguageSpec wiki](https://github.com/WLTools/LanguageSpec/wiki) at https://github.com/WLTools/LanguageSpec/wiki. 
-
-The [LanguageSpec.wiki](https://github.com/WLTools/LanguageSpec.wiki.git) repository contains documentation only:
-
-* Human readable documents.
-* Images or other files displayed within those documents.
-
-The [LanguageSpec](https://github.com/WLTools/LanguageSpec.git) repository contains:
-
-* Raw data.
-* Example code extracted from this wiki.
-* Tools used to extract example code, create language data, or investigate Mathematica's behavior for the purposes of understanding Wolfram Language.
-
-We invite contributions.
-
-## Contents
-
-* `Operator Table.csv`: Relatively complete table of operators implemented in Mathematica with accurate precedence, associativity, arity, affix, definition ("parse"), and `FullForm` data.
-* `Operator Table.xlsx`: A conveniently human readable version of `Operator Table.csv`.
+Copyright &copy; 2018&ndash;2019 Robert Jacobson. <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;float:left;padding:3pt;height:30pt;" src="/img/cc-by-sa.svg" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.

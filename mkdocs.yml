@@ -4,9 +4,6 @@ copyright: 'Copyright &copy; 2018&ndash;2019 Robert Jacobson'
 site_description: Wolfram Language Specification
 repo_url: https://github.com/WLTools/LanguageSpec
 
-# nav is handled by MkDocs Awesome Pages Plugin
-# https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
-
 theme:
     name: readthedocs
     custom_dir: docs/extras/
