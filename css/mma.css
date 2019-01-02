@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) 2016 rsmenon
+ * Licensed under the MIT License (https://opensource.org/licenses/MIT)
+ */
+.c {
+  color: #aaaaaa;
+  font-style: italic;
+}
+.k,
+.kt /* Keyword, decorator, e.g. "fragment". */
+{
+    color: #808080;
+}
+.mi /* Numbers */
+{
+    color: #40a070;
+}
+.m /* Numbers */
+{
+    color: #40a070;
+}
+.ne {
+  color: #ab466a; }
+.n,
+.nt /* Variables in use, function arguments. */
+{
+  color: #6E8413;
+  font-style: italic;
+}
+.nv,
+.nf,
+.nl /* Symbols being defined. */
+{
+    color: Maroon;
+    font-weight: bold;
+}
+.nb,
+.no /* Built-in symbols */
+{
+    color: #3473b2;
+}
+.o {
+  color: #a6573f;		 /* #555555; */
+}
+.p /* Brackets, colons, and other punctuation. */
+{
+  color: #4d0000;   /* #555555; */
+}
+.s {
+  color: #499A9F;
+  font-style: italic;
+}
+.vc {
+  color: #5d9066; }
+.err {
+  color: #555555; }

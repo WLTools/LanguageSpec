@@ -1,0 +1,15 @@
+body {
+    padding-top: 0px;
+}
+
+ul.nav{
+    display:inline;
+}
+
+div.container-fluid{
+    display:inline;
+}
+
+a.navbar-brand{
+    display:inline;
+}

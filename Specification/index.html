@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Robert Jacobson">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Index - Wolfram Language Specification</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link href="../extras/css/material-icons.css" rel="stylesheet">
+  <link href="../extras/css/admonitions.css" rel="stylesheet">
+  <link href="../extras/css/mma.css" rel="stylesheet">
+  <link href="../extras/css/fixes.css" rel="stylesheet">
+  <link href="../extras/css/tasklist.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Index";
+    var mkdocs_page_input_path = "Specification/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Wolfram Language Specification</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Language Specification</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Index</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#repository-notes">Repository Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#a-note-on-terminology">A Note on Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#why-two-repositories">Why two repositories?</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Syntax</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="Syntax/">Index</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="Syntax/Number-representations/">Number Representations</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Syntax/Number-representations/#digits">Digits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="Syntax/Number-representations/#examples">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="Syntax/Number-representations/#non-examples">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="Syntax/Number-representations/#examples_1">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="Syntax/Number-representations/#non-examples_1">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="Syntax/Number-representations/#examples_2">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="Syntax/Number-representations/#non-examples_2">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="Syntax/OperatorTable/">Operator Table</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="Syntax/Pseudo-operators/">Pseudo Operators</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Semantics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="Semantics/">Index</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="Semantics/Number-literal-semantics/">Number Literals</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Interfaces</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="Interfaces/">Index</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Standard Library</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="StandardLibrary/">Index</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Resources</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Resources/">Index</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Resources/Exploring-Mathematica/">Exploring Mathematica</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Resources/List-of-W-Language-Projects/">List of WL Projects</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Resources/List-of-W-Language-Projects/#computer-algebra-systems-and-term-rewriters">Computer Algebra Systems and Term Rewriters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Resources/List-of-W-Language-Projects/#active">Active</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Resources/List-of-W-Language-Projects/#inactive">Inactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Resources/List-of-W-Language-Projects/#parsers">Parsers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Resources/List-of-W-Language-Projects/#active_1">Active</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Resources/List-of-W-Language-Projects/#inactive_1">Inactive</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../Resources/Homeless-content.md">Homeless Content</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Contributing</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Contributing/">How to Contribute</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/#writing-content">Writing Content</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Contributing/#get-the-content">Get the Content</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Contributing/#writing">Writing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Contributing/#giving-back">Giving Back</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/#modifying-the-website-theme-or-structure">Modifying the Website Theme or Structure</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Contributing/Style-Guide/">Style Guide</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/Style-Guide/#writing-style-guide">Writing Style Guide</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/Style-Guide/#special-symbols">Special Symbols</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/Style-Guide/#mathematical-typesetting">Mathematical Typesetting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/Style-Guide/#code-style-guide">Code Style Guide</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Contributing/Style-Guide/#formal-grammars">Formal Grammars</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Contributing/Style-Guide/#wl-code">WL Code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/Style-Guide/#admonitions">Admonitions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../Contributing/Style-Guide/#authorship">Authorship</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Wolfram Language Specification</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Language Specification &raquo;</li>
+        
+      
+    
+    <li>Index</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/WLTools/LanguageSpec/edit/master/docs/Specification/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="Syntax/" class="btn btn-neutral float-right" title="Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="language-specification">Language Specification<a class="headerlink" href="#language-specification" title="Permanent link">&para;</a></h1>
+<p>Original home:</p>
+<ul>
+<li><a href="https://github.com/WLTools/LanguageSpec.git">https://github.com/WLTools/LanguageSpec.git</a></li>
+</ul>
+<p>The purpose of this wiki is to rigorously describe Wolfram Language to assist authors of WL tools and students of programming languages. It is not intended as user documentation or a programming tutorial.</p>
+<p>We invite contributions from anyone. Please read the [[Style Guide]] first. A good place to start is the catch-all page for [[To-Do's and homeless content|Homeless content]].</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Language Specification</p>
+<ul>
+<li>[[Syntax]]<ul>
+<li>[[Primitives]]<ul>
+<li>[[Strings]]</li>
+<li>[[Number representations]]</li>
+<li>[[Symbols]] (identifiers)</li>
+<li>[[Special character representations]]</li>
+</ul>
+</li>
+<li>[[Operators]]<ul>
+<li>[[Variadic forms]]</li>
+<li>[[Operators with a built-in meaning]]</li>
+<li><a href="https://rawgit.com/wiki/WLTools/LanguageSpec/OperatorTable.html">List of all operators with precedence, associativity, affix, and arity</a></li>
+<li>[[Two-dimensional "operators"|Two-dimensional operators]]</li>
+<li>[[FullForm]] (S-expressions)</li>
+<li>[[Pseudo-operators]]</li>
+</ul>
+</li>
+<li>[[Formatting and whitespace]]</li>
+<li>[[Box sublanguage]]</li>
+<li>[[Issues and inconsistencies]]<ul>
+<li>[[Precedence]]</li>
+<li>[[FullForm interpretation]]</li>
+<li>[[Nonexpression objects]] ("atomic functions")</li>
+<li>[[Bugs]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[[Semantics]]<ul>
+<li>[[Symbol properties]]<ul>
+<li>[[OwnValues]]</li>
+<li>[[DownValues, UpValues]]</li>
+<li>[[DefaultValues]]</li>
+<li>[[Options]]</li>
+<li>[[Attributes]]</li>
+<li>[[Messages]]</li>
+<li>[[SubValues]]</li>
+<li>[[NValues]]</li>
+<li>[[FormatValues]]</li>
+</ul>
+</li>
+<li>[[Scoping rules]]<ul>
+<li>[[Scoping operators]]</li>
+<li>[[Contexts]]</li>
+<li>[[&lambda; calculus semantics]]</li>
+<li>[[Packages]]</li>
+</ul>
+</li>
+<li>[[Pattern matching]]<ul>
+<li>[[Patterns]]</li>
+<li>[[Types of equality]]</li>
+<li>[[Options]]</li>
+</ul>
+</li>
+<li>[[Evaluation]]</li>
+<li>[[Types]]<ul>
+<li>[[Number literal semantics]]</li>
+</ul>
+</li>
+<li>[[Messages]]</li>
+<li>[[Homoiconicity]]</li>
+</ul>
+</li>
+<li>[[Built-in Functions / Standard Library|Standard Library]]<ul>
+<li>[[Manipulating primitives and expressions]]<ul>
+<li>[["List" processing and functional programming|List processing]]</li>
+<li>[[Homoiconic functions]]</li>
+<li>[[Introspection]]</li>
+<li>[[Strings]]</li>
+<li>[[Numbers]]</li>
+</ul>
+</li>
+<li>[[Control flow]]</li>
+<li>[[Controlling evaluation]]</li>
+<li>[[IO]]</li>
+<li>[[Mathematics]]</li>
+<li>[[Graphics]]</li>
+<li>[[UI]]</li>
+<li>[[Typesetting]]</li>
+<li>[[System and Environment]]<ul>
+<li>[[Autoevaluating symbols]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[[Interfaces]]<ul>
+<li>[[Notebook]]</li>
+<li>[[REPL]]</li>
+<li>[[Applications]]</li>
+<li>[[WSTP]]</li>
+<li>[[WXF]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>[[Resources for implementors]]</p>
+<ul>
+<li>[[General advice for implementors]]</li>
+<li>[[Test suite derived from this wiki]]</li>
+<li>[[Implementing pattern matching]]<ul>
+<li>[[Python]]</li>
+<li>[[Go]]</li>
+<li>[[ML-like languages]]</li>
+</ul>
+</li>
+<li>[[Parsing strategies]]</li>
+<li>[[Functional language implementation]]</li>
+<li>[[WL code highlighters and editors]]</li>
+</ul>
+</li>
+</ul>
+<h2 id="repository-notes">Repository Notes<a class="headerlink" href="#repository-notes" title="Permanent link">&para;</a></h2>
+<h3 id="a-note-on-terminology">A Note on Terminology<a class="headerlink" href="#a-note-on-terminology" title="Permanent link">&para;</a></h3>
+<p>In this wiki and related resources, a <em>W Language</em> is a language with the syntax of <a href="https://www.wolfram.com/language/">Wolfram Language</a>, the programming language of <a href="http://www.wolfram.com/mathematica/">Mathematica</a>. Thus, Wolfram Language is itself a W Language. Some authors of [[WL tools or implementations|List of W Language Projects]] explicitly describe their projects as targeting Mathematica's Wolfram Language, while other authors choose to call their language by a different name. A language implementation and the abstract concept of the language is a blurry distinction.  The phrase <em>W Language</em>—WL for short—is intended to be inclusive of all Wolfram Language implementations out of respect for each author's chosen epithet, while <em>Wolfram Language</em> refers to the programming language in the abstract, and <em>Mathematica</em> refers to the software sold by <a href="http://www.wolfram.com/">Wolfram</a> which implements Wolfram Language.</p>
+<h3 id="why-two-repositories">Why two repositories?<a class="headerlink" href="#why-two-repositories" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://github.com/WLTools/LanguageSpec.wiki.git">LanguageSpec.wiki</a> repository contains documentation only:</p>
+<ul>
+<li>Human readable documents.</li>
+<li>Images or other files displayed within those documents.</li>
+</ul>
+<p>The <a href="https://github.com/WLTools/LanguageSpec.git">LanguageSpec</a>  repository contains:</p>
+<ul>
+<li>Raw data.</li>
+<li>Example code extracted from this wiki.</li>
+<li>Tools used to extract example code, create language data, or investigate Mathematica's behavior for the purposes of understanding Wolfram Language.</li>
+</ul>
+<p>Having two repos provides the following advantages:</p>
+<ol>
+<li>The wiki is both editable on the web and is a standard git repository compatible with the usual git workflow.</li>
+<li>Separating the data and tools from the documentation supports the use cases that a user can clone/download one without the other, which we would expect to be a common use case.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Syntax/" class="btn btn-neutral float-right" title="Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div id="shoutouts">
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  </div>
+
+  <div class="license">
+      <div class="contentinfo" role="contentinfo">
+        <!-- Copyright etc -->
+        
+          Copyright &copy; 2018&ndash;2019 Robert Jacobson
+        
+      </div>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;float:left;padding:3pt;height:30pt;" src="/img/cc-by-sa.svg" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  </div>
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/WLTools/LanguageSpec/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="Syntax/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" defer></script>
+      <script src="../extras/js/usekratex.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script type="text/javascript" defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

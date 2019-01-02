@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Robert Jacobson">
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Style Guide - Wolfram Language Specification</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link href="../../extras/css/material-icons.css" rel="stylesheet">
+  <link href="../../extras/css/admonitions.css" rel="stylesheet">
+  <link href="../../extras/css/mma.css" rel="stylesheet">
+  <link href="../../extras/css/fixes.css" rel="stylesheet">
+  <link href="../../extras/css/tasklist.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Style Guide";
+    var mkdocs_page_input_path = "Contributing/Style-Guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Wolfram Language Specification</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Language Specification</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/">Index</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#repository-notes">Repository Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#a-note-on-terminology">A Note on Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#why-two-repositories">Why two repositories?</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Syntax</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/">Index</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/">Number Representations</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#digits">Digits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_1">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_1">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_2">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_2">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/OperatorTable/">Operator Table</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Semantics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/">Index</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/">Number Literals</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Interfaces</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Interfaces/">Index</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Standard Library</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/StandardLibrary/">Index</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Resources</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Resources/">Index</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Resources/Exploring-Mathematica/">Exploring Mathematica</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Resources/List-of-W-Language-Projects/">List of WL Projects</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Resources/List-of-W-Language-Projects/#computer-algebra-systems-and-term-rewriters">Computer Algebra Systems and Term Rewriters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Resources/List-of-W-Language-Projects/#active">Active</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Resources/List-of-W-Language-Projects/#inactive">Inactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Resources/List-of-W-Language-Projects/#parsers">Parsers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Resources/List-of-W-Language-Projects/#active_1">Active</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Resources/List-of-W-Language-Projects/#inactive_1">Inactive</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../Resources/Homeless-content.md">Homeless Content</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Contributing</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">How to Contribute</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../#writing-content">Writing Content</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../#get-the-content">Get the Content</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../#writing">Writing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../#giving-back">Giving Back</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../#modifying-the-website-theme-or-structure">Modifying the Website Theme or Structure</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Style Guide</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#writing-style-guide">Writing Style Guide</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#special-symbols">Special Symbols</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mathematical-typesetting">Mathematical Typesetting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#code-style-guide">Code Style Guide</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#formal-grammars">Formal Grammars</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wl-code">WL Code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#admonitions">Admonitions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#authorship">Authorship</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Wolfram Language Specification</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Contributing &raquo;</li>
+        
+      
+    
+    <li>Style Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/WLTools/LanguageSpec/edit/master/docs/Contributing/Style-Guide.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="../" class="btn btn-neutral" title="How to Contribute"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="style-guide">Style Guide<a class="headerlink" href="#style-guide" title="Permanent link">&para;</a></h1>
+<p>Use <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a>.</p>
+<h2 id="writing-style-guide">Writing Style Guide<a class="headerlink" href="#writing-style-guide" title="Permanent link">&para;</a></h2>
+<p>Write in <a href="https://en.wikipedia.org/wiki/Standard_written_English">standard written English</a> in approximation to <a href="https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style">Wikipedia's Manual of Style</a>. In particular, "Style and formatting should be consistent within an article."</p>
+<h2 id="special-symbols">Special Symbols<a class="headerlink" href="#special-symbols" title="Permanent link">&para;</a></h2>
+<p>Almost every editor and browser can handle characters outside of the ASCII character set. Feel free to use either an html entity <code>&amp;sum;</code>, decimal reference <code>&amp;#8721;</code>, hex reference <code>&amp;#x2211;</code>, or the character itself ∑.</p>
+<p>Note that Mathematica makes use of Unicode code points that do not represent the characters Mathematica displays. For example, <code class="highlight"><span class="nv">\[WolframLanguageLogo]</span><span class="w"></span></code> is the codepoint <code>&amp;#61726;</code> which is marked "for private use"—it is not a valid Unicode character and renders as &#61726;. For these cases, it is best to use the long name: <code class="highlight"><span class="nv">\[WolframLanguageLogo]</span><span class="w"></span></code>.</p>
+<h2 id="mathematical-typesetting">Mathematical Typesetting<a class="headerlink" href="#mathematical-typesetting" title="Permanent link">&para;</a></h2>
+<p>Inline math is typeset between single <code>$</code>-signs. Thus, <code class="highlight"><span class="s">$</span><span class="nv">\sqrt</span><span class="nb">{</span><span class="m">1</span><span class="o">+</span><span class="nb">x^</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span></code> renders as <span class="arithmatex">\(\sqrt{1+x^2}\)</span>. Likewise, use <code>$$…$$</code> or <code>\[…\]</code> for displayed math:</p>
+<p><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">x</span><span class="o">=</span><span class="nb">{</span><span class="nv">\frac</span><span class="nb"> {</span><span class="o">-</span><span class="nb">b</span><span class="nv">\pm</span><span class="nb"> {</span><span class="nv">\sqrt</span><span class="nb"> {b^{</span><span class="m">2</span><span class="nb">}</span><span class="o">-</span><span class="m">4</span><span class="nb">ac}}}{</span><span class="m">2</span><span class="nb">a}}</span>
+<span class="s">$$</span>
+</pre></div>
+renders as</p>
+<div class="arithmatex">\[x={\frac {-b\pm {\sqrt {b^{2}-4ac}}}{2a}}.\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>A displayed math equation needs to be surrounded by newlines as if it were in its own paragraph.</p>
+</div>
+<h2 id="code-style-guide">Code Style Guide<a class="headerlink" href="#code-style-guide" title="Permanent link">&para;</a></h2>
+<p>Place code within a code fence with the explicit language identifier. For example,</p>
+<div class="highlight"><pre><span></span>```wl
+StringJoin[Capitalize[ToLowerCase[StringSplit[&quot;my list&quot;]]]]
+```
+</pre></div>
+
+<p>results in the following:</p>
+<div class="highlight"><pre><span></span><span class="nb">StringJoin</span><span class="p">[</span><span class="nb">Capitalize</span><span class="p">[</span><span class="nb">ToLowerCase</span><span class="p">[</span><span class="nb">StringSplit</span><span class="p">[</span><span class="s">&quot;my list&quot;</span><span class="p">]]]]</span><span class="w"></span>
+</pre></div>
+
+<p>Set off code within text by placing it between two backticks (<code>`</code>), optionally with an inline language specifier: <code>`#!wl f[N@{g/@m}]`</code> is rendered as <code class="highlight"><span class="nv">f</span><span class="p">[</span><span class="nb">N</span><span class="o">@</span><span class="p">{</span><span class="nv">g</span><span class="o">/@</span><span class="nv">m</span><span class="p">}]</span><span class="w"></span></code>.</p>
+<p>The language specifiers are typically just the language name (see the <a href="http://pygments.org/docs/lexers/">Pygments docs</a>): <code>python</code>, <code>c</code>, <code>cpp</code>, <code>latex</code>, <code>perl</code> (for regexes), <code>antlr</code> (for grammars), <code>python</code>, <code>java</code>. Use <code>wl</code>, <em>not</em> <code>mma</code> or <code>mathematica</code>, as the language identifier for WL.</p>
+<h3 id="formal-grammars">Formal Grammars<a class="headerlink" href="#formal-grammars" title="Permanent link">&para;</a></h3>
+<p>The rule of thumb is that formal grammar representations should be considered pseudocode unless explicitly labelled otherwise. We express formal grammars in the usual syntax of Flex and Bison but allow regular expressions to be included within productions. Even so, we may capitalize purely lexical rules as is tradition. Productions end with a semicolon. Following <a href="https://www.antlr.org/">ANTLR4 syntax</a>, productions that can only appear within another production may be marked with <code class="highlight"><span class="nl">fragment</span><span class="w"></span></code>. This can make complicated productions easier to read while communicating that the <code class="highlight"><span class="nl">fragment</span><span class="w"></span></code> cannot appear on its own. Thus, a simplified example might be:</p>
+<div class="highlight"><pre><span></span><span class="k">fragment</span><span class="w"> </span><span class="nl">DIGIT</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="x">0-9</span><span class="p">];</span><span class="w"></span>
+<span class="nl">DecimalNumber</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="no">DIGIT</span><span class="o">+</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"> </span><span class="no">DIGIT</span><span class="o">*</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+
+<p>On occassions when a pure Bison, Flex, ANTLR4, or other specific grammar syntax is intended, the grammar should be labelled with its specific grammar syntax. Likewise, a pure regular expression should be labelled as such. If you use features in a regular expression that are specific to a particular syntax standard (PCRE, POSIX, Perl), please indicate the syntax standard you are using.</p>
+<h3 id="wl-code">WL Code<a class="headerlink" href="#wl-code" title="Permanent link">&para;</a></h3>
+<p>A WL expression (almost) always evaluates to another valid WL expression, so it is necessary to distinguish input expressions from output expressions using the <code class="highlight"><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"></span></code> and <code class="highlight"><span class="nb">Out</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="w"></span></code> labels respectively, just as the Mathematica command line interface does:</p>
+<div class="highlight"><pre><span></span><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">StringJoin</span><span class="p">[</span><span class="nb">Capitalize</span><span class="p">[</span><span class="nb">ToLowerCase</span><span class="p">[</span><span class="nb">StringSplit</span><span class="p">[</span><span class="s">&quot;my list&quot;</span><span class="p">]]]]</span><span class="w"></span>
+
+<span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyList&quot;</span><span class="w"></span>
+</pre></div>
+
+<p>An alternative to the above is to place the expected output of the expression in a code comment immediately below the expression. This has the disadvantage that the output is not syntax highlighted.</p>
+<div class="highlight"><pre><span></span><span class="nb">StringJoin</span><span class="p">[</span><span class="nb">Capitalize</span><span class="p">[</span><span class="nb">ToLowerCase</span><span class="p">[</span><span class="nb">StringSplit</span><span class="p">[</span><span class="s">&quot;my list&quot;</span><span class="p">]]]]</span><span class="w"></span>
+<span class="c">(* &quot;MyList&quot; *)</span><span class="w"></span>
+</pre></div>
+
+<p>It is often useful to write the output of an evaluation differently from how Mathematica would display it by default. In the examples above, <code class="highlight"><span class="s">&quot;MyList&quot;</span><span class="w"></span></code> is written within double quotes, i.e. in <code class="highlight"><span class="nb">InputForm</span><span class="w"></span></code>, to make it clear that the result is a string. It is not necessary to write <code class="highlight"><span class="nb">Out</span><span class="p">[</span><span class="m">4</span><span class="p">]</span><span class="o">//</span><span class="nb">InputForm</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyList&quot;</span><span class="w"></span></code> in these cases.</p>
+<p>GFM does not word-wrap WL code. For long lines of code, adding a linebreak improves readability and prevents an ugly scrollbar from appearing in the code block. Indent the continuation to make it clear that it is a continuation of the expression.</p>
+<div class="highlight"><pre><span></span><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">toCamelCase</span><span class="p">[</span><span class="nt">str_String</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"></span>
+<span class="w">            </span><span class="nb">StringJoin</span><span class="p">[</span><span class="nb">Capitalize</span><span class="p">[</span><span class="nb">ToLowerCase</span><span class="p">[</span><span class="nb">StringSplit</span><span class="p">[</span><span class="nv">str</span><span class="p">]]]]</span><span class="w"></span>
+</pre></div>
+
+<p>WL encourages writing code that is difficult to read. A little bit of whitespace can make a big difference.</p>
+<div class="highlight"><pre><span></span><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">toCamelCase</span><span class="p">[</span><span class="nt">str_String</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"></span>
+<span class="w">            </span><span class="nb">StringJoin</span><span class="p">[</span><span class="w"></span>
+<span class="w">                </span><span class="nb">Capitalize</span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="nb">ToLowerCase</span><span class="p">[</span><span class="w"></span>
+<span class="w">                        </span><span class="nb">StringSplit</span><span class="p">[</span><span class="nv">str</span><span class="p">]</span><span class="w"></span>
+<span class="w">                    </span><span class="p">]</span><span class="w"></span>
+<span class="w">                </span><span class="p">]</span><span class="w"></span>
+<span class="w">            </span><span class="p">]</span><span class="w"></span>
+</pre></div>
+
+<p>Always put code that is included inline in a sentence between backticks: writing <code>`#!wl PrimeQ/@Range[20]`</code> renders as <code class="highlight"><span class="nb">PrimeQ</span><span class="o">/@</span><span class="nb">Range</span><span class="p">[</span><span class="m">20</span><span class="p">]</span><span class="w"></span></code>.
+Only short pieces of code should be inlined. For example, <code class="highlight"><span class="nb">PrimeQ</span><span class="o">/@</span><span class="nb">Range</span><span class="p">[</span><span class="m">20</span><span class="p">]</span><span class="w"></span></code> is ok, but <code class="highlight"><span class="nv">toCamelCase</span><span class="p">[</span><span class="nt">str_String</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">StringJoin</span><span class="p">[</span><span class="nb">Capitalize</span><span class="p">[</span><span class="nb">ToLowerCase</span><span class="p">[</span><span class="nb">StringSplit</span><span class="p">[</span><span class="nv">str</span><span class="p">]]]]</span><span class="w"></span></code> is too long.</p>
+<p>When writing a specification for WL, always make note of where there can be incompatibilities with Mathematica using a "Compatibility Warning" as described in the next section.</p>
+<h2 id="admonitions">Admonitions<a class="headerlink" href="#admonitions" title="Permanent link">&para;</a></h2>
+<p>We use the (Admonitions plugin)[<a href="https://python-markdown.github.io/extensions/admonition/">https://python-markdown.github.io/extensions/admonition/</a>] for MKDocs which provides the following admonition environments:
+<code>Important</code>, <code>Abstract</code>, <code>Info</code>, <code>Tip</code>, <code>Success</code>, <code>Question</code>, <code>Warning</code>, <code>Failure</code>, <code>Danger</code>, <code>Bug</code>, <code>Example</code>, and <code>Quote</code>. Writing</p>
+<div class="highlight"><pre><span></span>!!! warning &quot;Compatibility Warning&quot;
+    This is a warning about compatibility with Mathematica.
+</pre></div>
+
+<p>will render as</p>
+<div class="admonition important">
+<p class="admonition-title">Compatibility Warning</p>
+<p>This is a warning about compatibility with Mathematica.</p>
+</div>
+<h2 id="authorship">Authorship<a class="headerlink" href="#authorship" title="Permanent link">&para;</a></h2>
+<p>If you author an article, feel free to add a byline. If you add significantly to an article with a byline, feel free to add your name to the byline. Neither is required.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../" class="btn btn-neutral" title="How to Contribute"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div id="shoutouts">
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  </div>
+
+  <div class="license">
+      <div class="contentinfo" role="contentinfo">
+        <!-- Copyright etc -->
+        
+          Copyright &copy; 2018&ndash;2019 Robert Jacobson
+        
+      </div>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;float:left;padding:3pt;height:30pt;" src="/img/cc-by-sa.svg" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  </div>
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/WLTools/LanguageSpec/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" defer></script>
+      <script src="../../extras/js/usekratex.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script type="text/javascript" defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Robert Jacobson">
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>List of WL Projects - Wolfram Language Specification</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link href="../../extras/css/material-icons.css" rel="stylesheet">
+  <link href="../../extras/css/admonitions.css" rel="stylesheet">
+  <link href="../../extras/css/mma.css" rel="stylesheet">
+  <link href="../../extras/css/fixes.css" rel="stylesheet">
+  <link href="../../extras/css/tasklist.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "List of WL Projects";
+    var mkdocs_page_input_path = "Resources/List-of-W-Language-Projects.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Wolfram Language Specification</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Language Specification</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/">Index</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#repository-notes">Repository Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#a-note-on-terminology">A Note on Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#why-two-repositories">Why two repositories?</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Syntax</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/">Index</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/">Number Representations</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#digits">Digits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_1">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_1">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_2">Examples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_2">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/OperatorTable/">Operator Table</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Semantics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/">Index</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/">Number Literals</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Interfaces</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Interfaces/">Index</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Standard Library</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Specification/StandardLibrary/">Index</a>
+    <ul>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Resources</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">Index</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Exploring-Mathematica/">Exploring Mathematica</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">List of WL Projects</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#computer-algebra-systems-and-term-rewriters">Computer Algebra Systems and Term Rewriters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#active">Active</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inactive">Inactive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parsers">Parsers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#active_1">Active</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inactive_1">Inactive</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../Homeless-content.md">Homeless Content</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Contributing</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Contributing/">How to Contribute</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/#writing-content">Writing Content</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/#get-the-content">Get the Content</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/#writing">Writing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/#giving-back">Giving Back</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/#modifying-the-website-theme-or-structure">Modifying the Website Theme or Structure</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Contributing/Style-Guide/">Style Guide</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#writing-style-guide">Writing Style Guide</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#special-symbols">Special Symbols</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#mathematical-typesetting">Mathematical Typesetting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#code-style-guide">Code Style Guide</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/Style-Guide/#formal-grammars">Formal Grammars</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/Style-Guide/#wl-code">WL Code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#admonitions">Admonitions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#authorship">Authorship</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Wolfram Language Specification</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Resources &raquo;</li>
+        
+      
+    
+    <li>List of WL Projects</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/WLTools/LanguageSpec/edit/master/docs/Resources/List-of-W-Language-Projects.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="../../Contributing/" class="btn btn-neutral float-right" title="How to Contribute">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Exploring-Mathematica/" class="btn btn-neutral" title="Exploring Mathematica"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="list-of-independent-wolfram-language-projects">List of Independent Wolfram Language Projects<a class="headerlink" href="#list-of-independent-wolfram-language-projects" title="Permanent link">&para;</a></h1>
+<h2 id="computer-algebra-systems-and-term-rewriters">Computer Algebra Systems and Term Rewriters<a class="headerlink" href="#computer-algebra-systems-and-term-rewriters" title="Permanent link">&para;</a></h2>
+<h3 id="active">Active<a class="headerlink" href="#active" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/omath/omath">omath</a> is similar in spirit to Mathics but is written in Java/Scala and appears to have had a 7 year hiatus from 2005 to 2012. The original parser "is mostly written by Yossi Farjoun, with some help from Scott Morrison" and is a generated parser using JavaCC and JJTree. There seems to be a newer parser written in Scala. The source code is distributed without a license. The historical repository lives at <a href="http://svn.omath.org/">http://svn.omath.org/</a>.</li>
+<li><a href="http://mathics.github.io/">Mathics</a>: A free, light-weight alternative to Mathematica created by Jan Pöschko. A Mathematica clone written in Python, Mathics includes a complete parser, FullForm emitter, and evaluator. GPL3 license.</li>
+<li><a href="https://github.com/tthsqe12/cas">cas</a>: A "bare bones cas" and front end that "tries to implement some of the mathematica language. A very limited set of commands is currently implemented." Written in C++. No license is specified.</li>
+<li><a href="https://github.com/jyh1/mmaclone">mmaclone</a>: "This interpreter is intended to mimic every exact detail of Wolfram Language, including but not limited to its syntax, semantic, expression structure, evaluation details, etc." Written in Haskell by Yonghao Jin. No license is specified.</li>
+<li><a href="https://github.com/corywalker/expreduce">expreduce</a>: A term rewriter/computer algebra system written in Go by Cory Walker using the WL parser by Jan Mercl. "The term rewriting system and pattern matching engine is fairly advanced. The computer algebra system at this stage is extremely limited, but simple calculus and algebraic manipulation is certainly supported...." MIT license.</li>
+</ul>
+<h3 id="inactive">Inactive<a class="headerlink" href="#inactive" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://sourceforge.net/projects/mockmma/">MockMMA</a>: By <a href="https://people.eecs.berkeley.edu/~fateman/">Richard Fateman</a> written in Lisp. This one's an old classic and of historical interest.</li>
+<li><a href="https://pypi.python.org/pypi/basicCAS/1.0">basicCAS</a>: By Alex Gittens, a python Mathematica parser. It appears to have disappeared from the author's website, but it's still available elsewhere on the net for those interested in looking for it. This project is interesting because it includes Alex's notes regarding implementation.</li>
+</ul>
+<h2 id="parsers">Parsers<a class="headerlink" href="#parsers" title="Permanent link">&para;</a></h2>
+<h3 id="active_1">Active<a class="headerlink" href="#active_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/rljacobson/FoxySheep">FoxySheep</a>. A relatively complete, easy to understand, easy to hack parser and FullForm emitter. Based on ANTLR4, FoxySheep targets Java and Python. Written by Robert Jacobson. BSD license.</li>
+<li><a href="http://wlplugin.halirutan.de/">Mathematica IntelliJ Plugin</a>. A mature, well-tested Wolfram Language parser capable of emitting FullForm and doing various code analysis.  The parser is a beautiful example of a Pratt parser, a top-down operator precedence parsing strategy first described by Vaughan Pratt in the 70s. MIT license for the code, but also includes proprietary data that is Copyright © 2013 Wolfram Research, Inc., that is distributed under a restricted use license.</li>
+<li><a href="https://github.com/axkr/symja-parser">Symja-parser</a> is the Mathematica parser for <a href="https://bitbucket.org/axelclk/symja_android_library/wiki/Home">Symja - Java Computer Algebra Library</a>, "a general purpose Java library for symbolic mathematics" by Axel Kramer. Symja contains a Mathematica parser for a reasonable subset of Mathematica. Apache License.</li>
+<li><a href="https://github.com/cznic/wl">WL</a>: A lex/yacc based parser written in Go by by Jan Mercl. BSD license.</li>
+</ul>
+<h3 id="inactive_1">Inactive<a class="headerlink" href="#inactive_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/mattpap/mathematica-parser">Mateusz Paprocki's Mathematica Parser in Scala</a>: "A library for parsing Mathematica's programming language written in Scala. It uses parser combinators and packrat parsers from Scala's standard library. Currently only a subset of Mathematica's language is supported." MIT Licensed.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Contributing/" class="btn btn-neutral float-right" title="How to Contribute">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Exploring-Mathematica/" class="btn btn-neutral" title="Exploring Mathematica"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div id="shoutouts">
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  </div>
+
+  <div class="license">
+      <div class="contentinfo" role="contentinfo">
+        <!-- Copyright etc -->
+        
+          Copyright &copy; 2018&ndash;2019 Robert Jacobson
+        
+      </div>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;float:left;padding:3pt;height:30pt;" src="/img/cc-by-sa.svg" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+  </div>
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/WLTools/LanguageSpec/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../Exploring-Mathematica/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../Contributing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" defer></script>
+      <script src="../../extras/js/usekratex.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script type="text/javascript" defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
