@@ -27,6 +27,11 @@
     padding-bottom: 3em;
 }
 
+/* Weird edge case */
+.section {
+    z-index: 1;
+}
+
 /* Color Scheme */
 /* Color of the top bar. */
 .wy-side-nav-search{

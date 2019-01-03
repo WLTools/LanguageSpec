@@ -26,6 +26,34 @@ extra_javascript:
     - 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js'
     - extras/js/usekratex.js
 
+markdown_extensions:
+    - toc:
+        permalink: True
+    # - sane_lists
+    - markdown_include.include:
+        base_path: docs
+    - admonition
+    - footnotes
+    - pymdownx.arithmatex:
+        generic: true
+    - pymdownx.highlight:
+        use_pygments: true
+        guess_lang: false
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
+    - pymdownx.details
+
+plugins:
+    - search:
+        prebuild_index: true
+
 nav:
     - 'Language Specification':
         - 'Index': 'Specification/index.md'
@@ -49,29 +77,3 @@ nav:
     - 'Contributing':
        - 'How to Contribute': 'Contributing/index.md'
        - 'Style Guide': 'Contributing/Style-Guide.md'
-
-markdown_extensions:
-    - toc:
-        permalink: True
-    # - sane_lists
-    - markdown_include.include:
-        base_path: docs
-    - admonition
-    - footnotes
-    - pymdownx.arithmatex:
-        generic: true
-    - pymdownx.highlight:
-        use_pygments: true
-        guess_lang: false
-    - pymdownx.betterem:
-        smart_enable: all
-    - pymdownx.inlinehilite
-    - pymdownx.magiclink
-    - pymdownx.smartsymbols
-    - pymdownx.superfences
-    - pymdownx.tasklist:
-        custom_checkbox: true
-    - pymdownx.tilde
-
-plugins:
-    - search

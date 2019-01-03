@@ -1,10 +1,47 @@
-.task-list-item {
+.task-list-item{
   list-style-type: none !important;
+  margin-left: 24px;
+}
+
+/* Shift the collapsed tasklist items to be "subitems" of detail list. */
+summary + ul > li.task-list-item {
+    z-index: 2;
+    position: relative !important;
+    margin-left: 64px !important;
+}
+.task-list{
+    z-index: 2;
+}
+/* Shift details if nested in a list. */
+li > details{
+    z-index: 1;
+    position: relative;
+    top: -24px;
+    margin-bottom: -24px; 
+    margin-left: -16px;
+}
+/* Shift list if "children" are collapsible. */
+.rst-content .section ul.task-list{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+/* Weird edge case */
+.section li.task-list-item > p{
+    margin-bottom: 0;
+}
+
+/* Style the open/close widget */
+details summary::-webkit-details-marker{
+    font-size: 75%;
+    color: #777;
+}
+li summary {
+    outline: none;
 }
 
 .task-list-item input[type="checkbox"] {
-  margin: 0 4px 0.25em -20px;
-  vertical-align: middle;
+    margin: 0 4px 0.25em -20px;
+    vertical-align: middle;
 }
 
 .task-list-control {
@@ -21,7 +58,7 @@
 .task-list-control input[type="checkbox"] {
   position: absolute;
   opacity: 0;
-  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+  z-index: 2; /* Put the input behind the label so it doesn't overlay text */
 }
 
 .task-list-indicator {
@@ -36,7 +73,14 @@
   /* border-radius: .25rem; */
 }
 
+label.task-list-control{
+    position: relative;
+    z-index: 2;
+}
+
 .task-list-control input[type="checkbox"]:checked + .task-list-indicator::before {
+    position: absolute;
+    z-index: 3;
     display: block;
     /* margin-top: -4px;
     margin-left: 2px; */

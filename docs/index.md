@@ -11,15 +11,32 @@ Hit us up on...
 
 ## Table of Contents
 
+<script>
+//Close all details.
+function closeDetails(){
+    // Fetch all the details element.
+    const details = Array.from(document.querySelectorAll("details"));
+
+    details.forEach((detail) => {
+        detail.removeAttribute("open");
+    });
+}
+window.addEventListener("load", closeDetails);
+</script>
+
 - [ ] Language Specification
     - [ ] Syntax
 {!Specification/Syntax/tasks.md!}
+
     - [ ] Semantics
 {!Specification/Semantics/tasks.md!}
+
     - [ ] Standard Library
 {!Specification/StandardLibrary/tasks.md!}
+
     - [ ] Interfaces
 {!Specification/Interfaces/tasks.md!}
+
 - [ ] Resources for implementors
 {!Resources/tasks.md!}
 
