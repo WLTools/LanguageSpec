@@ -21,6 +21,22 @@ This is a catch-all document for content that should be incorporated somewhere b
 
 ## Mathematica behaviors / quirks
 
+### Different behavior between the kernel and the notebook
+
+The kernel and frontend have different parsers. The differences between them are usually
+ semantically equivalent, but that is not always the case. This section collections meaningful
+  differences between the two. See also Operator Precedence, which lists differences in operator
+   precedence specifically. 
+
+#### `x_.` vs `x_..`
+
+*Notebook:* The expression `x_..` is a syntax error, because `x_.` is first parsed as `Optional
+[Pattern[x,Blank[]]]`, and then `.` is encountered as an unexpected character.
+
+*Kernel:* The `..` is recognized as `Repeated`, so `x_..` is parsed as `Repeated[Pattern[x,Blank
+[]]]`
+
+
 ### Different behavior between `ToExpression` vs command line
 
 The command line and `ToExpression` nearly always give the same output. Here are two examples where `ToExpression` does not match the command line.

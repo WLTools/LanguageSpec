@@ -345,7 +345,7 @@ The following regular expression matches all Wolfram Language number literals wi
 
 This example is from:
 
-> Richard J. Fateman, "A review of Mathematica," _Journal of Symbolic Computation,_ vol. 13, iss. 5, May 1992, p. 554. doi: [10.1016/s0747-7171(10)80011-2](https://doi.org/10.1016/S0747-7171%2810%2980011-2)
+> Richard J. Fateman, "A review of Mathematica," _Journal of Symbolic Computation,_ vol. 13, iss. 5, May 1992, p. 554. doi: [10.1016/s0747-7171(10)80011-2](https://doi.org/10.1016/S0747-7171%2810%2980011-2). Also [available on Richard Fateman's website.](https://people.eecs.berkeley.edu/~fateman/papers/mma.review.pdf) 
 
 
 ```wl
