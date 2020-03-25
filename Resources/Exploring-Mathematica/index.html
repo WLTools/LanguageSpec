@@ -10,16 +10,16 @@
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>Exploring Mathematica - Wolfram Language Specification</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link href="../../extras/css/material-icons.css" rel="stylesheet">
-  <link href="../../extras/css/admonitions.css" rel="stylesheet">
-  <link href="../../extras/css/mma.css" rel="stylesheet">
-  <link href="../../extras/css/fixes.css" rel="stylesheet">
-  <link href="../../extras/css/tasklist.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link href="../../extras/css/material-icons.css" rel="stylesheet" />
+  <link href="../../extras/css/admonitions.css" rel="stylesheet" />
+  <link href="../../extras/css/mma.css" rel="stylesheet" />
+  <link href="../../extras/css/fixes.css" rel="stylesheet" />
+  <link href="../../extras/css/tasklist.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -50,106 +50,83 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">Language Specification</span></p>
+                <p class="caption"><span class="caption-text">Syntax</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/">Index</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/Syntax/">Syntax Tasks</a>
     <ul>
-    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#table-of-contents">Table of Contents</a>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/Syntax/Number-representations/">Number Representations</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#repository-notes">Repository Notes</a>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#digits">Digits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#a-note-on-terminology">A Note on Terminology</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples">Examples</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#why-two-repositories">Why two repositories?</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_1">Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_1">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_2">Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_2">Non Examples</a>
     </li>
         </ul>
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Syntax</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/Syntax/OperatorTable/">Operator Table</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/">Index</a>
-    <ul>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/">Number Representations</a>
-    <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#digits">Digits</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_1">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_1">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#examples_2">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#non-examples_2">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/OperatorTable/">Operator Table</a>
-    <ul>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
-    <ul>
-    </ul>
-                </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Semantics</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/">Index</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
     <ul>
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/">Number Literals</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Semantics</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/Semantics/">Semantics Tasks</a>
     <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/">Number Literals</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
     </li>
     </ul>
-                </li>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/StandardLibrary/">Standard Library Tasks</a>
+    <ul>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Interfaces</a>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/Interfaces/">Interfaces Tasks</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/Interfaces/">Index</a>
-    <ul>
-    </ul>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Standard Library</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Specification/StandardLibrary/">Index</a>
-    <ul>
-    </ul>
-                </li>
     </ul>
                     </li>
                 </ul>
@@ -183,7 +160,31 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="" href="../Homeless-content.md">Homeless Content</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ProgrammingTools/">Programming Tools</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../KernelVsFE/">MMA Notebook Vs. Frontend</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../KernelVsFE/#semantically-meaningful-differences">Semantically meaningful differences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../KernelVsFE/#hashing">Hashing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../KernelVsFE/#determining-the-fullform-expression-of-an-expression">Determining the FullForm expression of an expression</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../KernelVsFE/#number-forms">Number forms</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../KernelVsFE/#differences-that-are-semantically-equivalent">Differences that are semantically equivalent</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../KernelVsFE/#flattening-times-in-arithmetic-expressions">Flattening Times in arithmetic expressions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../KernelVsFE/#bugs">Bugs</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Contributing</span></p>
@@ -223,6 +224,46 @@
     <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#admonitions">Admonitions</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Style-Guide/#authorship">Authorship</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Contributing/Homeless-content/">Homeless Content</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Homeless-content/#documentation-examples-test-suites">Documentation, examples, test suites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Contributing/Homeless-content/#mathematica-behaviors-quirks">Mathematica behaviors / quirks</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/Homeless-content/#different-behavior-between-the-kernel-and-the-notebook">Different behavior between the kernel and the notebook</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Contributing/Homeless-content/#x_-vs-x_">x_. vs x_..</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/Homeless-content/#different-behavior-between-toexpression-vs-command-line">Different behavior between ToExpression vs command line</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Contributing/Homeless-content/#frontend">Frontend</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Contributing/Homeless-content/#rawescape-is-as-a-letter">RawEscape is as a letter</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Specification/">Language Specification Tasks</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/#repository-notes">Repository Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#a-note-on-terminology">A Note on Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/#why-two-repositories">Why two repositories?</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -273,23 +314,24 @@
               
                 <h1 id="exploring-mathematica">Exploring Mathematica<a class="headerlink" href="#exploring-mathematica" title="Permanent link">&para;</a></h1>
 <p>This pages points to ways of exploring Mathematica's implementation of Wolfram Language.</p>
+<h1 id="spelunking">Spelunking<a class="headerlink" href="#spelunking" title="Permanent link">&para;</a></h1>
 <p>To access the definition of a built-in function, simply use <code>PrintDefinitions</code> from the <code>GeneralUtilities</code> package. (You don’t need the <a href="https://mathematica.stackexchange.com/questions/1742/what-is-the-most-convenient-way-to-read-definitions-of-in-memory-symbols-when-we/15948#15948">Spelunking Tools</a> anymore.)</p>
-<div class="highlight"><pre><span></span><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">GeneralUtilities`PrintDefinitions</span><span class="p">[</span><span class="nv">GeneralUtilities`PrintDefinitions</span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">GeneralUtilities`PrintDefinitions</span><span class="p">[</span><span class="nv">GeneralUtilities`PrintDefinitions</span><span class="p">]</span><span class="w"></span>
 
 <span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="nb">NotebookObject</span><span class="p">[</span><span class="nv">GeneralUtilities`PrintDefinitions</span><span class="p">]</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 <h1 id="parsing-expressions">Parsing Expressions<a class="headerlink" href="#parsing-expressions" title="Permanent link">&para;</a></h1>
 <p>The FE creates a box representation of your input as you type. The box representation then gets reinterpreted as an expression by the kernel. The FE often interprets input differently from the kernel. In particular, there are many cases of inconsistencies in operator precedence between the FE and <code>ToExpression</code> / command line. Therefore, we need ways of explicitly choosing which component parses an expression even if we are working in a notebook.</p>
 <h2 id="using-the-kernel-to-parse-an-expression">Using the kernel to parse an expression<a class="headerlink" href="#using-the-kernel-to-parse-an-expression" title="Permanent link">&para;</a></h2>
 <p>Using <code>ToExpression</code> or the command line interface uses the kernel directly to parse the expression, circumventing the FE's parser. To make sure your expression is parsed by the kernel even if you are working in a notebook, do this:</p>
-<div class="highlight"><pre><span></span><span class="nb">In</span><span class="p">[</span><span class="m">10</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">FullForm</span><span class="p">[</span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;Hold[a|b*c]&quot;</span><span class="p">]]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">10</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">FullForm</span><span class="p">[</span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;Hold[a|b*c]&quot;</span><span class="p">]]</span><span class="w"></span>
 
 <span class="nb">Out</span><span class="p">[</span><span class="m">10</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Alternatives</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nb">Times</span><span class="p">[</span><span class="nv">b</span><span class="p">,</span><span class="nv">c</span><span class="p">]]]</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 <p>It matters how you use <code>ToExpression</code>. Compare:</p>
-<div class="highlight"><pre><span></span><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;a;;\[Intersection]a\[SquareIntersection];;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">StandardForm</span><span class="p">,</span><span class="w"> </span><span class="nb">Hold</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;a;;\[Intersection]a\[SquareIntersection];;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">StandardForm</span><span class="p">,</span><span class="w"> </span><span class="nb">Hold</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
 
 <span class="nb">Syntax</span><span class="o">::</span><span class="ne">sntxf</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;a;; ⋂ a ⊓&quot;</span><span class="w"> </span><span class="nv">cannot</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">followed</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="s">&quot;;;a&quot;</span><span class="o">.</span><span class="w"></span>
 
@@ -297,30 +339,118 @@
 <span class="w">   </span><span class="nv">Invalid</span><span class="w"> </span><span class="nv">syntax</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">before</span><span class="w"> </span><span class="s">&quot;\!\(StandardForm\`a;;\:22c2a\:2293;;a\) &quot;</span><span class="o">.</span><span class="w"></span>
 <span class="w">                                                                       </span><span class="o">^</span><span class="w"></span>
 <span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">$Failed</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 <p>gives a different result from</p>
-<div class="highlight"><pre><span></span><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;Hold[a;;\[Intersection]a\[SquareIntersection];;a]&quot;</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;Hold[a;;\[Intersection]a\[SquareIntersection];;a]&quot;</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
 
 <span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Span</span><span class="p">[</span><span class="nb">SquareIntersection</span><span class="p">[</span><span class="nb">Intersection</span><span class="p">[</span><span class="nb">Span</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="nb">All</span><span class="p">],</span><span class="w"> </span><span class="nv">a</span><span class="p">],</span><span class="w"> </span><span class="nv">System`Private`DummyId</span><span class="p">],</span><span class="w"> </span><span class="nv">a</span><span class="p">]]</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 <p>in both the FE and command line.</p>
 <h2 id="using-the-frontend-to-parse-an-expression">Using the Frontend to parse an expression<a class="headerlink" href="#using-the-frontend-to-parse-an-expression" title="Permanent link">&para;</a></h2>
 <p>To ask the FE to interpret an expression given as a <code>String</code>, do this:</p>
-<div class="highlight"><pre><span></span><span class="nv">FEToExpression</span><span class="p">[</span><span class="nt">s_String</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">FEToExpression</span><span class="p">[</span><span class="nt">s_String</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"></span>
 <span class="w"> </span><span class="nb">MakeExpression</span><span class="o">@</span><span class="nb">FrontEndExecute</span><span class="o">@</span><span class="nv">FrontEnd`ReparseBoxStructurePacket</span><span class="p">[</span><span class="nv">s</span><span class="p">]</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 <p>Alternatively, you can use the <code>UndocumentedTestFEParserPacket</code> function:</p>
-<div class="highlight"><pre><span></span><span class="nv">FEToExpression</span><span class="p">[</span><span class="nt">s_String</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">MakeExpression</span><span class="p">[</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">FEToExpression</span><span class="p">[</span><span class="nt">s_String</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">MakeExpression</span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="nv">MathLink`CallFrontEnd</span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="nv">FrontEnd`UndocumentedTestFEParserPacket</span><span class="p">[</span><span class="nv">s</span><span class="p">,</span><span class="w"> </span><span class="nb">False</span><span class="p">]</span><span class="w"></span>
 <span class="w">        </span><span class="p">][[</span><span class="m">1</span><span class="p">]]</span><span class="w"> </span><span class="c">(* Do not need form annotation. *)</span><span class="w"></span>
 <span class="w">    </span><span class="p">]</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 <p>Note that <code>UndocumentedTestFEParserPacket</code> returns a list of the form <code>{boxexpression, form}</code>, where <code>form</code> is usually <code>StandardForm</code>.</p>
+<h1 id="wolfram-virtual-machine">Wolfram Virtual Machine<a class="headerlink" href="#wolfram-virtual-machine" title="Permanent link">&para;</a></h1>
+<p>Currently, the <code>Compile</code> function produces bytecode for the Wolfram Virtual Machine (WVM), a register machine. This is lightly documented in the official docs:<br>
+<a href="https://reference.wolfram.com/language/Compile/tutorial/Overview.html">https://reference.wolfram.com/language/Compile/tutorial/Overview.html</a><br>
+<a href="https://reference.wolfram.com/language/Compile/tutorial/Operation.html">https://reference.wolfram.com/language/Compile/tutorial/Operation.html</a></p>
+<p><a href="https://mathematica.stackexchange.com/users/17/silvia">Silvia</a> on <a href="https://mathematica.stackexchange.com/">SE</a> wrote a <a href="https://mathematica.stackexchange.com/questions/4343/automatically-generating-a-dependency-graph-of-an-arbitrary-mathematica-function/4346#4346">nice pretty printer and control flow analyzer</a> for the bytecode. (There are other CFG generators for source code.)</p>
+<p>Tools to disassemble the bytecode are provided in <code>CompiledFunctionTools`</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Needs</span><span class="p">[</span><span class="s">&quot;CompiledFunctionTools`&quot;</span><span class="p">]</span><span class="o">;</span><span class="w"></span>
+
+<span class="nv">testCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Compile</span><span class="p">[{{</span><span class="nv">data</span><span class="p">,</span><span class="nt">_Real</span><span class="p">,</span><span class="m">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nv">y</span><span class="p">,</span><span class="nt">_Real</span><span class="p">,</span><span class="m">1</span><span class="p">}},</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Module</span><span class="p">[{</span><span class="vc">n</span><span class="p">,</span><span class="w"> </span><span class="vc">z</span><span class="p">,</span><span class="w"> </span><span class="vc">testdata</span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="vc">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Length</span><span class="p">[</span><span class="nv">data</span><span class="p">]</span><span class="o">;</span><span class="w"></span>
+<span class="w">        </span><span class="vc">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">data</span><span class="o">-</span><span class="nv">y</span><span class="p">)</span><span class="o">/</span><span class="nb">Sqrt</span><span class="p">[</span><span class="nb">Abs</span><span class="p">[</span><span class="nv">y</span><span class="p">]]</span><span class="o">;</span><span class="w"></span>
+<span class="w">        </span><span class="vc">testdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="w"> </span><span class="p">(</span><span class="nb">Erf</span><span class="p">[</span><span class="nf">#</span><span class="o">/</span><span class="nb">Sqrt</span><span class="p">[</span><span class="m">2</span><span class="p">]]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="o">&amp;</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="vc">z</span><span class="o">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="nb">Sqrt</span><span class="p">[</span><span class="vc">n</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">.12</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">.11</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">Sqrt</span><span class="p">[</span><span class="vc">n</span><span class="p">])</span><span class="w"> </span><span class="nb">Max</span><span class="p">[</span><span class="nb">Abs</span><span class="p">[</span><span class="nb">Range</span><span class="p">[</span><span class="vc">n</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="vc">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">Sort</span><span class="p">[</span><span class="vc">testdata</span><span class="p">]]]</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">]</span><span class="o">;</span><span class="w"></span>
+
+<span class="nv">CompilePrint</span><span class="p">[</span><span class="nv">testCode</span><span class="p">,</span><span class="w"> </span><span class="nv">ShowInstructions</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">True</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>The above code gives:
+d-objdump</p>
+<div class="highlight"><pre><span></span><code>        <span class="err">2</span> <span class="nf">arguments</span>
+        <span class="err">9</span> <span class="nf">Integer</span> <span class="no">registers</span>
+        <span class="err">7</span> <span class="nf">Real</span> <span class="no">registers</span>
+        <span class="err">7</span> <span class="nf">Tensor</span> <span class="no">registers</span>
+        <span class="nf">Underflow</span> <span class="no">checking</span> <span class="no">off</span>
+        <span class="nf">Overflow</span> <span class="no">checking</span> <span class="no">off</span>
+        <span class="nf">Integer</span> <span class="no">overflow</span> <span class="no">checking</span> <span class="no">on</span>
+        <span class="nf">RuntimeAttributes</span> <span class="p">-</span><span class="err">&gt;</span> <span class="err">{}</span>
+
+        <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">0</span> <span class="err">=</span> <span class="no">A1</span>
+        <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">1</span> <span class="err">=</span> <span class="no">A2</span>
+        <span class="nf">I7</span> <span class="err">=</span> <span class="mi">0</span>
+        <span class="nf">R6</span> <span class="err">=</span> <span class="mi">0</span><span class="no">.11</span>
+        <span class="nf">I6</span> <span class="err">=</span> <span class="mi">2</span>
+        <span class="nf">I4</span> <span class="err">=</span> <span class="mi">1</span>
+        <span class="nf">R5</span> <span class="err">=</span> <span class="mi">0</span><span class="no">.12</span>
+        <span class="nf">Result</span> <span class="err">=</span> <span class="no">R2</span>
+
+<span class="err">1</span>   <span class="err">{33,</span> <span class="err">0,</span> <span class="err">0}</span>                                    <span class="nf">I0</span> <span class="err">=</span> <span class="no">Length</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">0</span><span class="p">]</span>
+<span class="err">2</span>   <span class="err">{40,</span> <span class="err">43,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">1,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">2}</span>                    <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span> <span class="err">=</span> <span class="p">-</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">1</span>
+<span class="err">3</span>   <span class="err">{44,</span> <span class="err">0,</span> <span class="err">2,</span> <span class="err">3}</span>                                 <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">3</span> <span class="err">=</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">0</span> <span class="err">+</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span>
+<span class="err">4</span>   <span class="err">{40,</span> <span class="err">38,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">1,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">2}</span>                    <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span> <span class="err">=</span> <span class="no">Abs</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">1</span><span class="p">]</span>
+<span class="err">5</span>   <span class="err">{40,</span> <span class="err">57,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">2,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">4}</span>                    <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">4</span> <span class="err">=</span> <span class="no">Sqrt</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span><span class="p">]</span>
+<span class="err">6</span>   <span class="err">{40,</span> <span class="err">60,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">4,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">2}</span>                    <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span> <span class="err">=</span> <span class="no">Reciprocal</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">4</span><span class="p">]</span>
+<span class="err">7</span>   <span class="err">{45,</span> <span class="err">3,</span> <span class="err">2,</span> <span class="err">3}</span>                                 <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">3</span> <span class="err">=</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">3</span> <span class="p">*</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span>
+<span class="err">8</span>   <span class="err">{33,</span> <span class="err">3,</span> <span class="err">3}</span>                                    <span class="nf">I3</span> <span class="err">=</span> <span class="no">Length</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">3</span><span class="p">]</span>
+<span class="err">9</span>   <span class="err">{6,</span> <span class="err">7,</span> <span class="err">8}</span>                                     <span class="nf">I8</span> <span class="err">=</span> <span class="no">I7</span>
+<span class="err">10</span>  <span class="err">{35,</span> <span class="err">3,</span> <span class="err">3,</span> <span class="err">2}</span>                                 <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span> <span class="err">=</span> <span class="no">Table</span><span class="p">[</span> <span class="no">I3</span><span class="p">]</span>
+<span class="err">11</span>  <span class="err">{6,</span> <span class="err">7,</span> <span class="err">5}</span>                                     <span class="nf">I5</span> <span class="err">=</span> <span class="no">I7</span>
+<span class="err">12</span>  <span class="err">{3,</span> <span class="err">13}</span>                                       <span class="nf">goto</span> <span class="mi">25</span>
+<span class="err">13</span>  <span class="err">{10,</span> <span class="err">6,</span> <span class="err">2}</span>                                    <span class="nf">R2</span> <span class="err">=</span> <span class="no">I6</span>
+<span class="err">14</span>  <span class="err">{40,</span> <span class="err">60,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">2,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">0}</span>                    <span class="nf">R0</span> <span class="err">=</span> <span class="no">Reciprocal</span><span class="p">[</span> <span class="no">R2</span><span class="p">]</span>
+<span class="err">15</span>  <span class="err">{37,</span> <span class="err">3,</span> <span class="err">5,</span> <span class="err">3,</span> <span class="err">2}</span>                              <span class="nf">R2</span> <span class="err">=</span> <span class="no">GetElement</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">3</span><span class="p">,</span> <span class="no">I5</span><span class="p">]</span>
+<span class="err">16</span>  <span class="err">{10,</span> <span class="err">6,</span> <span class="err">3}</span>                                    <span class="nf">R3</span> <span class="err">=</span> <span class="no">I6</span>
+<span class="err">17</span>  <span class="err">{40,</span> <span class="err">57,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">3,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">4}</span>                    <span class="nf">R4</span> <span class="err">=</span> <span class="no">Sqrt</span><span class="p">[</span> <span class="no">R3</span><span class="p">]</span>
+<span class="err">18</span>  <span class="err">{40,</span> <span class="err">60,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">4,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">3}</span>                    <span class="nf">R3</span> <span class="err">=</span> <span class="no">Reciprocal</span><span class="p">[</span> <span class="no">R4</span><span class="p">]</span>
+<span class="err">19</span>  <span class="err">{16,</span> <span class="err">2,</span> <span class="err">3,</span> <span class="err">2}</span>                                 <span class="nf">R2</span> <span class="err">=</span> <span class="no">R2</span> <span class="p">*</span> <span class="no">R3</span>
+<span class="err">20</span>  <span class="err">{40,</span> <span class="err">75,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">2,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">3}</span>                    <span class="nf">R3</span> <span class="err">=</span> <span class="no">Erf</span><span class="p">[</span> <span class="no">R2</span><span class="p">]</span>
+<span class="err">21</span>  <span class="err">{10,</span> <span class="err">4,</span> <span class="err">2}</span>                                    <span class="nf">R2</span> <span class="err">=</span> <span class="no">I4</span>
+<span class="err">22</span>  <span class="err">{13,</span> <span class="err">3,</span> <span class="err">2,</span> <span class="err">3}</span>                                 <span class="nf">R3</span> <span class="err">=</span> <span class="no">R3</span> <span class="err">+</span> <span class="no">R2</span>
+<span class="err">23</span>  <span class="err">{16,</span> <span class="err">0,</span> <span class="err">3,</span> <span class="err">0}</span>                                 <span class="nf">R0</span> <span class="err">=</span> <span class="no">R0</span> <span class="p">*</span> <span class="no">R3</span>
+<span class="err">24</span>  <span class="err">{36,</span> <span class="err">8,</span> <span class="err">0,</span> <span class="err">3,</span> <span class="err">2}</span>                              <span class="nf">Element</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span><span class="p">,</span> <span class="no">I8</span><span class="p">]</span> <span class="err">=</span> <span class="no">R0</span>
+<span class="err">25</span>  <span class="err">{4,</span> <span class="err">5,</span> <span class="err">3,</span> <span class="err">-12}</span>                                <span class="nf">if</span><span class="p">[</span> <span class="err">++</span> <span class="no">I5</span> <span class="err">&lt;=</span> <span class="no">I3</span><span class="p">]</span> <span class="no">goto</span> <span class="mi">13</span>
+<span class="err">26</span>  <span class="err">{10,</span> <span class="err">0,</span> <span class="err">1}</span>                                    <span class="nf">R1</span> <span class="err">=</span> <span class="no">I0</span>
+<span class="err">27</span>  <span class="err">{40,</span> <span class="err">57,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">1,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">0}</span>                    <span class="nf">R0</span> <span class="err">=</span> <span class="no">Sqrt</span><span class="p">[</span> <span class="no">R1</span><span class="p">]</span>
+<span class="err">28</span>  <span class="err">{40,</span> <span class="err">60,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">0,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">2}</span>                    <span class="nf">R2</span> <span class="err">=</span> <span class="no">Reciprocal</span><span class="p">[</span> <span class="no">R0</span><span class="p">]</span>
+<span class="err">29</span>  <span class="err">{16,</span> <span class="err">6,</span> <span class="err">2,</span> <span class="err">4}</span>                                 <span class="nf">R4</span> <span class="err">=</span> <span class="no">R6</span> <span class="p">*</span> <span class="no">R2</span>
+<span class="err">30</span>  <span class="err">{13,</span> <span class="err">0,</span> <span class="err">5,</span> <span class="err">4,</span> <span class="err">2}</span>                              <span class="nf">R2</span> <span class="err">=</span> <span class="no">R0</span> <span class="err">+</span> <span class="no">R5</span> <span class="err">+</span> <span class="no">R4</span>
+<span class="err">31</span>  <span class="err">{6,</span> <span class="err">0,</span> <span class="err">5}</span>                                     <span class="nf">I5</span> <span class="err">=</span> <span class="no">I0</span>
+<span class="err">32</span>  <span class="err">{6,</span> <span class="err">7,</span> <span class="err">1}</span>                                     <span class="nf">I1</span> <span class="err">=</span> <span class="no">I7</span>
+<span class="err">33</span>  <span class="err">{35,</span> <span class="err">5,</span> <span class="err">2,</span> <span class="err">4}</span>                                 <span class="nf">T</span><span class="p">(</span><span class="no">I1</span><span class="p">)</span><span class="mi">4</span> <span class="err">=</span> <span class="no">Table</span><span class="p">[</span> <span class="no">I5</span><span class="p">]</span>
+<span class="err">34</span>  <span class="err">{6,</span> <span class="err">7,</span> <span class="err">2}</span>                                     <span class="nf">I2</span> <span class="err">=</span> <span class="no">I7</span>
+<span class="err">35</span>  <span class="err">{3,</span> <span class="err">2}</span>                                        <span class="nf">goto</span> <span class="mi">37</span>
+<span class="err">36</span>  <span class="err">{36,</span> <span class="err">1,</span> <span class="err">2,</span> <span class="err">2,</span> <span class="err">4}</span>                              <span class="nf">Element</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">I1</span><span class="p">)</span><span class="mi">4</span><span class="p">,</span> <span class="no">I1</span><span class="p">]</span> <span class="err">=</span> <span class="no">I2</span>
+<span class="err">37</span>  <span class="err">{4,</span> <span class="err">2,</span> <span class="err">5,</span> <span class="err">-1}</span>                                 <span class="nf">if</span><span class="p">[</span> <span class="err">++</span> <span class="no">I2</span> <span class="err">&lt;=</span> <span class="no">I5</span><span class="p">]</span> <span class="no">goto</span> <span class="mi">36</span>
+<span class="err">38</span>  <span class="err">{10,</span> <span class="err">0,</span> <span class="err">4}</span>                                    <span class="nf">R4</span> <span class="err">=</span> <span class="no">I0</span>
+<span class="err">39</span>  <span class="err">{40,</span> <span class="err">60,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">4,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">1}</span>                    <span class="nf">R1</span> <span class="err">=</span> <span class="no">Reciprocal</span><span class="p">[</span> <span class="no">R4</span><span class="p">]</span>
+<span class="err">40</span>  <span class="err">{41,</span> <span class="err">259,</span> <span class="err">3,</span> <span class="err">0,</span> <span class="err">1,</span> <span class="err">2,</span> <span class="err">1,</span> <span class="err">4,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">5}</span>          <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">5</span> <span class="err">=</span> <span class="no">R1</span> <span class="p">*</span> <span class="no">T</span><span class="p">(</span><span class="no">I1</span><span class="p">)</span><span class="mi">4</span>
+<span class="err">41</span>  <span class="err">{42,</span> <span class="nf">Sort</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="err">}</span>                  <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">4</span> <span class="err">=</span> <span class="no">Sort</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">2</span><span class="p">]]</span>
+<span class="err">42</span>  <span class="err">{40,</span> <span class="err">43,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">4,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">6}</span>                    <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">6</span> <span class="err">=</span> <span class="p">-</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">4</span>
+<span class="err">43</span>  <span class="err">{44,</span> <span class="err">5,</span> <span class="err">6,</span> <span class="err">5}</span>                                 <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">5</span> <span class="err">=</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">5</span> <span class="err">+</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">6</span>
+<span class="err">44</span>  <span class="err">{40,</span> <span class="err">38,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">5,</span> <span class="err">3,</span> <span class="err">1,</span> <span class="err">6}</span>                    <span class="nf">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">6</span> <span class="err">=</span> <span class="no">Abs</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">5</span><span class="p">]</span>
+<span class="err">45</span>  <span class="err">{42,</span> <span class="nf">MaxRT</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="err">}</span>                 <span class="no">R1</span> <span class="err">=</span> <span class="no">MaxRT</span><span class="p">[</span> <span class="no">T</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="mi">6</span><span class="p">]]</span>
+<span class="err">46</span>  <span class="err">{16,</span> <span class="err">2,</span> <span class="err">1,</span> <span class="err">2}</span>                                 <span class="nf">R2</span> <span class="err">=</span> <span class="no">R2</span> <span class="p">*</span> <span class="no">R1</span>
+<span class="err">47</span>  <span class="err">{1}</span>                                           <span class="nf">Return</span>
+</code></pre></div>
               
             </div>
           </div>
@@ -346,7 +476,7 @@
       <div class="contentinfo" role="contentinfo">
         <!-- Copyright etc -->
         
-          Copyright &copy; 2018&ndash;2019 Robert Jacobson
+          Copyright &copy; 2018&ndash;2020 Robert Jacobson
         
       </div>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;float:left;padding:3pt;height:30pt;" src="/img/cc-by-sa.svg" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
@@ -378,7 +508,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" defer></script>
       <script src="../../extras/js/usekratex.js" defer></script>
       <script src="../../search/main.js" defer></script>
-    <script type="text/javascript" defer>
+    <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
         };

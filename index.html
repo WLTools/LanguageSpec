@@ -9,17 +9,17 @@
   <meta name="author" content="Robert Jacobson">
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>WLTools: Language Specification - Wolfram Language Specification</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <title>Wolfram Language Specification</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
-  <link href="extras/css/material-icons.css" rel="stylesheet">
-  <link href="extras/css/admonitions.css" rel="stylesheet">
-  <link href="extras/css/mma.css" rel="stylesheet">
-  <link href="extras/css/fixes.css" rel="stylesheet">
-  <link href="extras/css/tasklist.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link href="extras/css/material-icons.css" rel="stylesheet" />
+  <link href="extras/css/admonitions.css" rel="stylesheet" />
+  <link href="extras/css/mma.css" rel="stylesheet" />
+  <link href="extras/css/fixes.css" rel="stylesheet" />
+  <link href="extras/css/tasklist.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -50,106 +50,83 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">Language Specification</span></p>
+                <p class="caption"><span class="caption-text">Syntax</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="Specification/">Index</a>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/Syntax/">Syntax Tasks</a>
     <ul>
-    <li class="toctree-l2"><a class="reference internal" href="Specification/#table-of-contents">Table of Contents</a>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/Syntax/Number-representations/">Number Representations</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="Specification/#repository-notes">Repository Notes</a>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#digits">Digits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/#a-note-on-terminology">A Note on Terminology</a>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#examples">Examples</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/#why-two-repositories">Why two repositories?</a>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#non-examples">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#examples_1">Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#non-examples_1">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#examples_2">Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#non-examples_2">Non Examples</a>
     </li>
         </ul>
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Syntax</a>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/Syntax/OperatorTable/">Operator Table</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/">Index</a>
-    <ul>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/">Number Representations</a>
-    <ul>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#digits">Digits</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Syntax/Number-representations/#examples">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Syntax/Number-representations/#non-examples">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Syntax/Number-representations/#examples_1">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Syntax/Number-representations/#non-examples_1">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Syntax/Number-representations/#examples_2">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Syntax/Number-representations/#non-examples_2">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/OperatorTable/">Operator Table</a>
-    <ul>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
-    <ul>
-    </ul>
-                </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Semantics</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/Semantics/">Index</a>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
     <ul>
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/">Number Literals</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Semantics</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/Semantics/">Semantics Tasks</a>
     <ul>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/">Number Literals</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
     </li>
     </ul>
-                </li>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/StandardLibrary/">Standard Library Tasks</a>
+    <ul>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Interfaces</a>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/Interfaces/">Interfaces Tasks</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/Interfaces/">Index</a>
-    <ul>
-    </ul>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Standard Library</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Specification/StandardLibrary/">Index</a>
-    <ul>
-    </ul>
-                </li>
     </ul>
                     </li>
                 </ul>
@@ -183,7 +160,31 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="" href="Resources/Homeless-content.md">Homeless Content</a>
+                    <li class="toctree-l1"><a class="reference internal" href="Resources/ProgrammingTools/">Programming Tools</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="Resources/KernelVsFE/">MMA Notebook Vs. Frontend</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="Resources/KernelVsFE/#semantically-meaningful-differences">Semantically meaningful differences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#hashing">Hashing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#determining-the-fullform-expression-of-an-expression">Determining the FullForm expression of an expression</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#number-forms">Number forms</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Resources/KernelVsFE/#differences-that-are-semantically-equivalent">Differences that are semantically equivalent</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions">Flattening Times in arithmetic expressions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Resources/KernelVsFE/#bugs">Bugs</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Contributing</span></p>
@@ -223,6 +224,46 @@
     <li class="toctree-l2"><a class="reference internal" href="Contributing/Style-Guide/#admonitions">Admonitions</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="Contributing/Style-Guide/#authorship">Authorship</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="Contributing/Homeless-content/">Homeless Content</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="Contributing/Homeless-content/#documentation-examples-test-suites">Documentation, examples, test suites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Contributing/Homeless-content/#mathematica-behaviors-quirks">Mathematica behaviors / quirks</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Contributing/Homeless-content/#different-behavior-between-the-kernel-and-the-notebook">Different behavior between the kernel and the notebook</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="Contributing/Homeless-content/#x_-vs-x_">x_. vs x_..</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Contributing/Homeless-content/#different-behavior-between-toexpression-vs-command-line">Different behavior between ToExpression vs command line</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Contributing/Homeless-content/#frontend">Frontend</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="Contributing/Homeless-content/#rawescape-is-as-a-letter">RawEscape is as a letter</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Specification/">Language Specification Tasks</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/#repository-notes">Repository Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/#a-note-on-terminology">A Note on Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/#why-two-repositories">Why two repositories?</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -271,38 +312,66 @@
 <li><strong>GitHub:</strong> <a href="https://github.com/WLTools">https://github.com/WLTools</a> Unfortunately, GitHub requires organization members to be "invited" by email or GitHub username, but I intend it to be open to anyone who wishes to participate. Hit us up on Slack.</li>
 </ul>
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<script>
+//Close all details.
+function closeDetails(){
+    // Fetch all the details element.
+    const details = Array.from(document.querySelectorAll("details"));
+
+    details.forEach((detail) => {
+        detail.removeAttribute("open");
+    });
+}
+window.addEventListener("load", closeDetails);
+</script>
+
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Language Specification<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Syntax<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Primitives<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Language Specification</p>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Syntax</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Primitives</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Strings</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="Number-representations.md">Number representations</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/Specification/Syntax/Number-representations">Number representations</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Symbols (identifiers)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Special character representations</li>
 </ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Operators<ul class="task-list">
+</details>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Operators</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Variadic forms</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Operators with a built-in meaning</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="../Syntax/OperatorTable.md">List of all operators with precedence, associativity, affix, and arity</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="/Specification/Syntax/OperatorTable">List of all operators with precedence, associativity, affix, and arity</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Two-dimensional "operators"</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> FullForm (M-expressions)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="Pseudo-operators.md">Pseudo-operators</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="/Specification/Syntax/Pseudo-operators">Pseudo-operators</a></li>
 </ul>
-</li>
+</details>
+<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Formatting and whitespace</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Box sublanguage</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Issues and inconsistencies<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Issues and inconsistencies</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Precedence</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> FullForm interpretation</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nonexpression objects ("atomic functions")</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bugs</li>
 </ul>
+</details>
 </li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Semantics</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Symbol properties</li>
 </ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Semantics<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Symbol properties<ul class="task-list">
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OwnValues</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> DownValues, UpValues</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> DefaultValues</li>
@@ -313,50 +382,74 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NValues</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> FormatValues</li>
 </ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Scoping rules<ul class="task-list">
+</details>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Scoping rules</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Scoping operators</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Contexts</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> &lambda; calculus semantics</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Packages</li>
 </ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pattern matching<ul class="task-list">
+</details>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pattern matching</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Patterns</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Types of equality</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Options</li>
 </ul>
-</li>
+</details>
+<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Evaluation</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Types<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Types</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="Number-literal-semantics.md">Number literal semantics</a></li>
 </ul>
-</li>
+</details>
+<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Messages</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Homoiconicity</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Standard Library</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Manipulating primitives and expressions<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Standard Library</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Manipulating primitives and expressions</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> "List" processing and functional programming</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Homoiconic functions</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Introspection</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Strings</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Numbers</li>
 </ul>
-</li>
+</details>
+<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Control flow</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Controlling evaluation</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> IO</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Mathematics</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Graphics</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> UI</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Typesetting</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> System and Environment<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Typesetting</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> System and Environment</p>
+</li>
+</ul>
+<details open="open"><summary></summary><ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Autoevaluating symbols</li>
 </ul>
+</details>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Interfaces<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Interfaces</p>
+<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Notebook</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> REPL</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Applications</li>
@@ -366,10 +459,13 @@
 </li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Resources for implementors<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Resources for implementors</p>
+<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> General advice for implementors<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="Exploring-Mathematica.md">Exploring Mathematica</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="List-of-W-Language-Projects.md">List of Independent Wolfram Language Projects</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="ProgrammingTools.md">Software Development Tools for Wolfram Language</a></li>
 </ul>
 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Test suite derived from this wiki</li>
@@ -382,6 +478,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Parsing strategies</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Functional language implementation</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> WL code highlighters and editors</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Differences between the Mathematica command line and notebook frontend</li>
 </ul>
 </li>
 </ul>
@@ -402,7 +499,7 @@
       <div class="contentinfo" role="contentinfo">
         <!-- Copyright etc -->
         
-          Copyright &copy; 2018&ndash;2019 Robert Jacobson
+          Copyright &copy; 2018&ndash;2020 Robert Jacobson
         
       </div>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;float:left;padding:3pt;height:30pt;" src="/img/cc-by-sa.svg" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
@@ -430,7 +527,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" defer></script>
       <script src="extras/js/usekratex.js" defer></script>
       <script src="search/main.js" defer></script>
-    <script type="text/javascript" defer>
+    <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
         };
@@ -440,6 +537,6 @@
 </html>
 
 <!--
-MkDocs version : 1.1.dev0
-Build Date UTC : 2019-01-02 06:09:02
+MkDocs version : 1.1
+Build Date UTC : 2020-03-25 04:10:19
 -->

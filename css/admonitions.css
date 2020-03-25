@@ -4,7 +4,7 @@
     padding: 1em, .1em, 1em, 2em;
 }
 
-.md-icon, .admonition>.admonition-title:before, .admonition>summary:before, details>.admonition-title:before, details>summary:before, summary:after {
+.md-icon, .admonition>.admonition-title:before, .admonition>summary:before, details>.admonition-title:before{
     font-family: Material Icons;
     font-style: normal;
     font-variant: normal;
@@ -17,7 +17,7 @@
     direction: ltr;
 }
 
-.admonition, details {
+.admonition {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
     position: relative;
     margin: 1.5625em 0;
@@ -28,20 +28,20 @@
     overflow: hidden;
 }
 
-[dir=rtl] .admonition, [dir=rtl] details {
+[dir=rtl] .admonition{
     border-right: .4rem solid #448aff;
     border-left: none
 }
 
-html .admonition>:last-child, html details>:last-child {
+html .admonition>:last-child {
     margin-bottom: 1.2rem
 }
 
-.admonition .admonition, .admonition details, details .admonition, details details {
+.admonition .admonition, .admonition details, details .admonition{
     margin: 1em 0
 }
 
-.admonition>.admonition-title, .admonition>summary, details>.admonition-title, details>summary {
+.admonition>.admonition-title, .admonition>summary, details>.admonition-title{
     margin: -.8em -1.2rem .8;
     /* padding: .8rem 1.2rem .8rem 4rem; */
     padding: .8rem 1.2rem .6rem 2.5rem;
@@ -51,15 +51,15 @@ html .admonition>:last-child, html details>:last-child {
     color: black;
 }
 
-[dir=rtl] .admonition>.admonition-title, [dir=rtl] .admonition>summary, [dir=rtl] details>.admonition-title, [dir=rtl] details>summary {
+[dir=rtl] .admonition>.admonition-title, [dir=rtl] .admonition>summary, [dir=rtl] details>.admonition-title{
     padding: .8rem 4rem .8rem 1.2rem
 }
 
-.admonition>.admonition-title:last-child, .admonition>summary:last-child, details>.admonition-title:last-child, details>summary:last-child {
+.admonition>.admonition-title:last-child, .admonition>summary:last-child, details>.admonition-title:last-child{
     margin-bottom: 0
 }
 
-.admonition>.admonition-title:before, .admonition>summary:before, details>.admonition-title:before, details>summary:before {
+.admonition>.admonition-title:before, .admonition>summary:before, details>.admonition-title:before{
     position: absolute;
     left: .5rem;
     color: #448aff;
@@ -71,27 +71,27 @@ html .admonition>:last-child, html details>:last-child {
     content: "\E3C9";
 }
 
-[dir=rtl] .admonition>.admonition-title:before, [dir=rtl] .admonition>summary:before, [dir=rtl] details>.admonition-title:before, [dir=rtl] details>summary:before {
+[dir=rtl] .admonition>.admonition-title:before, [dir=rtl] .admonition>summary:before, [dir=rtl] details>.admonition-title:before{
     right: 1.2rem;
     left: auto
 }
 
-.admonition.abstract, .admonition.summary, .admonition.tldr, details.abstract, details.summary, details.tldr {
+.admonition.abstract, .admonition.summary, .admonition.tldr, details.abstract, details.tldr {
     border-left-color: #00b0ff;
     background-color: white;
 }
 
-[dir=rtl] .admonition.abstract, [dir=rtl] .admonition.summary, [dir=rtl] .admonition.tldr, [dir=rtl] details.abstract, [dir=rtl] details.summary, [dir=rtl] details.tldr {
+[dir=rtl] .admonition.abstract, [dir=rtl] .admonition.summary, [dir=rtl] .admonition.tldr, [dir=rtl] details.abstract {
     border-right-color: #00b0ff;
     background-color: white;
 }
 
-.admonition.abstract>.admonition-title, .admonition.abstract>summary, .admonition.summary>.admonition-title, .admonition.summary>summary, .admonition.tldr>.admonition-title, .admonition.tldr>summary, details.abstract>.admonition-title, details.abstract>summary, details.summary>.admonition-title, details.summary>summary, details.tldr>.admonition-title, details.tldr>summary {
+.admonition.abstract>.admonition-title, .admonition.abstract>summary, .admonition.summary>.admonition-title, .admonition.summary>summary, .admonition.tldr>.admonition-title, .admonition.tldr>summary, details.abstract>.admonition-title, details.abstract>summary>.admonition-title>summary, details.tldr>.admonition-title, details.tldr>summary {
     border-bottom-color: .1rem solid rgba(0, 176, 255, .1);
     background-color: rgba(0, 176, 255, .1)
 }
 
-.admonition.abstract>.admonition-title:before, .admonition.abstract>summary:before, .admonition.summary>.admonition-title:before, .admonition.summary>summary:before, .admonition.tldr>.admonition-title:before, .admonition.tldr>summary:before, details.abstract>.admonition-title:before, details.abstract>summary:before, details.summary>.admonition-title:before, details.summary>summary:before, details.tldr>.admonition-title:before, details.tldr>summary:before {
+.admonition.abstract>.admonition-title:before, .admonition.abstract>summary:before, .admonition.summary>.admonition-title:before, .admonition.summary>summary:before, .admonition.tldr>.admonition-title:before, .admonition.tldr>summary:before, details.abstract>.admonition-title:before, details.abstract>summary:before>.admonition-title:before>summary:before, details.tldr>.admonition-title:before, details.tldr>summary:before {
     color: #00b0ff;
     content: ""
 }

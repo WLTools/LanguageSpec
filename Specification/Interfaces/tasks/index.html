@@ -10,16 +10,16 @@
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
   <title>Tasks - Wolfram Language Specification</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
-  <link href="../../../extras/css/material-icons.css" rel="stylesheet">
-  <link href="../../../extras/css/admonitions.css" rel="stylesheet">
-  <link href="../../../extras/css/mma.css" rel="stylesheet">
-  <link href="../../../extras/css/fixes.css" rel="stylesheet">
-  <link href="../../../extras/css/tasklist.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link href="../../../extras/css/material-icons.css" rel="stylesheet" />
+  <link href="../../../extras/css/admonitions.css" rel="stylesheet" />
+  <link href="../../../extras/css/mma.css" rel="stylesheet" />
+  <link href="../../../extras/css/fixes.css" rel="stylesheet" />
+  <link href="../../../extras/css/tasklist.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -50,106 +50,83 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">Language Specification</span></p>
+                <p class="caption"><span class="caption-text">Syntax</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../">Index</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Syntax/">Syntax Tasks</a>
     <ul>
-    <li class="toctree-l2"><a class="reference internal" href="../../#table-of-contents">Table of Contents</a>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Syntax/Number-representations/">Number Representations</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="../../#repository-notes">Repository Notes</a>
+    <li class="toctree-l2"><a class="reference internal" href="../../Syntax/Number-representations/#digits">Digits</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../#a-note-on-terminology">A Note on Terminology</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#examples">Examples</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../#why-two-repositories">Why two repositories?</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#non-examples">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#examples_1">Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#non-examples_1">Non Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#examples_2">Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#non-examples_2">Non Examples</a>
     </li>
         </ul>
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Syntax</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Syntax/OperatorTable/">Operator Table</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Syntax/">Index</a>
-    <ul>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Syntax/Number-representations/">Number Representations</a>
-    <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#digits">Digits</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Syntax/Number-representations/#examples">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Syntax/Number-representations/#non-examples">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Syntax/Number-representations/#examples_1">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Syntax/Number-representations/#non-examples_1">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Syntax/Number-representations/#scientific-form-scientific-notation">Scientific Form / Scientific Notation</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Syntax/Number-representations/#examples_2">Examples</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Syntax/Number-representations/#non-examples_2">Non Examples</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Syntax/OperatorTable/">Operator Table</a>
-    <ul>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Syntax/Pseudo-operators/">Pseudo Operators</a>
-    <ul>
-    </ul>
-                </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Semantics</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Semantics/">Index</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Syntax/Pseudo-operators/">Pseudo Operators</a>
     <ul>
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Semantics/Number-literal-semantics/">Number Literals</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Semantics</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Semantics/">Semantics Tasks</a>
     <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Semantics/Number-literal-semantics/">Number Literals</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#approximate-numbers-real">Approximate Numbers (Real)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#when-a-number-literal-isreal">When a Number Literal isReal</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#precision-and-accuracy">Precision and Accuracy</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
+    <li class="toctree-l2"><a class="reference internal" href="../../Semantics/Number-literal-semantics/#scientific-form">Scientific Form</a>
     </li>
     </ul>
-                </li>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../StandardLibrary/">Standard Library Tasks</a>
+    <ul>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Interfaces</a>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">Interfaces Tasks</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../">Index</a>
-    <ul>
-    </ul>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Standard Library</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../StandardLibrary/">Index</a>
-    <ul>
-    </ul>
-                </li>
     </ul>
                     </li>
                 </ul>
@@ -183,7 +160,31 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="" href="../../../Resources/Homeless-content.md">Homeless Content</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Resources/ProgrammingTools/">Programming Tools</a>
+    <ul>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Resources/KernelVsFE/">MMA Notebook Vs. Frontend</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#semantically-meaningful-differences">Semantically meaningful differences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#hashing">Hashing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#determining-the-fullform-expression-of-an-expression">Determining the FullForm expression of an expression</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#number-forms">Number forms</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#differences-that-are-semantically-equivalent">Differences that are semantically equivalent</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions">Flattening Times in arithmetic expressions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#bugs">Bugs</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Contributing</span></p>
@@ -226,6 +227,46 @@
     </li>
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Contributing/Homeless-content/">Homeless Content</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Contributing/Homeless-content/#documentation-examples-test-suites">Documentation, examples, test suites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Contributing/Homeless-content/#mathematica-behaviors-quirks">Mathematica behaviors / quirks</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Homeless-content/#different-behavior-between-the-kernel-and-the-notebook">Different behavior between the kernel and the notebook</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Homeless-content/#x_-vs-x_">x_. vs x_..</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Homeless-content/#different-behavior-between-toexpression-vs-command-line">Different behavior between ToExpression vs command line</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Homeless-content/#frontend">Frontend</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Homeless-content/#rawescape-is-as-a-letter">RawEscape is as a letter</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../">Language Specification Tasks</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../#repository-notes">Repository Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../#a-note-on-terminology">A Note on Terminology</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../#why-two-repositories">Why two repositories?</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
                 </ul>
       </div>
     </div>
@@ -262,12 +303,12 @@
           <div role="main">
             <div class="section">
               
-                <div class="highlight"><pre><span></span>    - [ ] Notebook
+                <div class="highlight"><pre><span></span><code>    - [ ] Notebook
     - [ ] REPL
     - [ ] Applications
     - [ ] WSTP
     - [ ] WXF
-</pre></div>
+</code></pre></div>
               
             </div>
           </div>
@@ -284,7 +325,7 @@
       <div class="contentinfo" role="contentinfo">
         <!-- Copyright etc -->
         
-          Copyright &copy; 2018&ndash;2019 Robert Jacobson
+          Copyright &copy; 2018&ndash;2020 Robert Jacobson
         
       </div>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;float:left;padding:3pt;height:30pt;" src="/img/cc-by-sa.svg" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
@@ -312,7 +353,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" defer></script>
       <script src="../../../extras/js/usekratex.js" defer></script>
       <script src="../../../search/main.js" defer></script>
-    <script type="text/javascript" defer>
+    <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
         };

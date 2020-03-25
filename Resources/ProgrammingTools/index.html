@@ -9,7 +9,7 @@
   <meta name="author" content="Robert Jacobson">
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>List of WL Projects - Wolfram Language Specification</title>
+  <title>Programming Tools - Wolfram Language Specification</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -23,8 +23,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "List of WL Projects";
-    var mkdocs_page_input_path = "Resources/List-of-W-Language-Projects.md";
+    var mkdocs_page_name = "Programming Tools";
+    var mkdocs_page_input_path = "Resources/ProgrammingTools.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -140,28 +140,28 @@
     <ul>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">List of WL Projects</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#computer-algebra-systems-and-term-rewriters">Computer Algebra Systems and Term Rewriters</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../List-of-W-Language-Projects/">List of WL Projects</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../List-of-W-Language-Projects/#computer-algebra-systems-and-term-rewriters">Computer Algebra Systems and Term Rewriters</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#active">Active</a>
+    <li class="toctree-l3"><a class="reference internal" href="../List-of-W-Language-Projects/#active">Active</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#inactive">Inactive</a>
+    <li class="toctree-l3"><a class="reference internal" href="../List-of-W-Language-Projects/#inactive">Inactive</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#parsers">Parsers</a>
+    <li class="toctree-l2"><a class="reference internal" href="../List-of-W-Language-Projects/#parsers">Parsers</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#active_1">Active</a>
+    <li class="toctree-l3"><a class="reference internal" href="../List-of-W-Language-Projects/#active_1">Active</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#inactive_1">Inactive</a>
+    <li class="toctree-l3"><a class="reference internal" href="../List-of-W-Language-Projects/#inactive_1">Inactive</a>
     </li>
         </ul>
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ProgrammingTools/">Programming Tools</a>
-    <ul>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Programming Tools</a>
+    <ul class="current">
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../KernelVsFE/">MMA Notebook Vs. Frontend</a>
@@ -293,18 +293,18 @@
         
       
     
-    <li>List of WL Projects</li>
+    <li>Programming Tools</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/WLTools/LanguageSpec/edit/master/docs/Resources/List-of-W-Language-Projects.md"
+        <a href="https://github.com/WLTools/LanguageSpec/edit/master/docs/Resources/ProgrammingTools.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
   </ul>
   
     <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-        <a href="../ProgrammingTools/" class="btn btn-neutral float-right" title="Programming Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
-        <a href="../Exploring-Mathematica/" class="btn btn-neutral" title="Exploring Mathematica"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../KernelVsFE/" class="btn btn-neutral float-right" title="MMA Notebook Vs. Frontend">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../List-of-W-Language-Projects/" class="btn btn-neutral" title="List of WL Projects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
   
   <hr/>
@@ -312,33 +312,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="list-of-independent-wolfram-language-projects">List of Independent Wolfram Language Projects<a class="headerlink" href="#list-of-independent-wolfram-language-projects" title="Permanent link">&para;</a></h1>
-<h2 id="computer-algebra-systems-and-term-rewriters">Computer Algebra Systems and Term Rewriters<a class="headerlink" href="#computer-algebra-systems-and-term-rewriters" title="Permanent link">&para;</a></h2>
-<h3 id="active">Active<a class="headerlink" href="#active" title="Permanent link">&para;</a></h3>
+                <h1 id="mathematica-programming-tools">Mathematica Programming Tools<a class="headerlink" href="#mathematica-programming-tools" title="Permanent link">&para;</a></h1>
 <ul>
-<li><a href="https://github.com/omath/omath">omath</a> is similar in spirit to Mathics but is written in Java/Scala and appears to have had a 7 year hiatus from 2005 to 2012. The original parser "is mostly written by Yossi Farjoun, with some help from Scott Morrison" and is a generated parser using JavaCC and JJTree. There seems to be a newer parser written in Scala. The source code is distributed without a license. The historical repository lives at <a href="http://svn.omath.org/">http://svn.omath.org/</a>.</li>
-<li><a href="http://mathics.github.io/">Mathics</a>: A free, light-weight alternative to Mathematica created by Jan Pöschko. A Mathematica clone written in Python, Mathics includes a complete parser, FullForm emitter, and evaluator. GPL3 license.</li>
-<li><a href="https://github.com/tthsqe12/cas">cas</a>: A "bare bones cas" and front end that "tries to implement some of the mathematica language. A very limited set of commands is currently implemented." Written in C++. No license is specified.</li>
-<li><a href="https://github.com/jyh1/mmaclone">mmaclone</a>: "This interpreter is intended to mimic every exact detail of Wolfram Language, including but not limited to its syntax, semantic, expression structure, evaluation details, etc." Written in Haskell by Yonghao Jin. No license is specified.</li>
-<li><a href="https://github.com/corywalker/expreduce">expreduce</a>: A term rewriter/computer algebra system written in Go by Cory Walker using the WL parser by Jan Mercl. "The term rewriting system and pattern matching engine is fairly advanced. The computer algebra system at this stage is extremely limited, but simple calculus and algebraic manipulation is certainly supported...." MIT license.</li>
+<li>Keeping Mathematica notebooks in a git repository.<br>
+<a href="https://github.com/JP-Ellis/mathematica-notebook-filter">https://github.com/JP-Ellis/mathematica-notebook-filter</a></li>
+<li>Mathematica plugin for IntelliJ IDEA<br>
+For intelligent code assistance and productive development.<br>
+<a href="http://wlplugin.halirutan.de/">http://wlplugin.halirutan.de/</a></li>
+<li>Power Programming with Mathematica by David B. Wagner<br>
+<a href="https://mathematica.stackexchange.com/a/22724/27662">https://mathematica.stackexchange.com/a/22724/27662</a>.</li>
+<li><a href="https://mathematicaforprediction.wordpress.com/2016/03/22/creating-and-programming-dsls/">Creating and programming domain specific languages</a> by Anton Antonov</li>
+<li><a href="https://mathematicaforprediction.wordpress.com/2016/03/20/object-oriented-design-patterns-in-mathematica/">Object-Oriented Design Patterns in Mathematica</a>by Anton Antonov</li>
+<li>Beautiful CFG Generator package by Anton Antonov<br>
+<a href="https://mathematicaforprediction.wordpress.com/2019/01/01/call-graph-generation-for-context-functions/">https://mathematicaforprediction.wordpress.com/2019/01/01/call-graph-generation-for-context-functions/</a></li>
 </ul>
-<h3 id="inactive">Inactive<a class="headerlink" href="#inactive" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://sourceforge.net/projects/mockmma/">MockMMA</a>: By <a href="https://people.eecs.berkeley.edu/~fateman/">Richard Fateman</a> written in Lisp. This one's an old classic and of historical interest.</li>
-<li><a href="https://pypi.python.org/pypi/basicCAS/1.0">basicCAS</a>: By Alex Gittens, a python Mathematica parser. It appears to have disappeared from the author's website, but it's still available elsewhere on the net for those interested in looking for it. This project is interesting because it includes Alex's notes regarding implementation.</li>
-</ul>
-<h2 id="parsers">Parsers<a class="headerlink" href="#parsers" title="Permanent link">&para;</a></h2>
-<h3 id="active_1">Active<a class="headerlink" href="#active_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/rljacobson/FoxySheep">FoxySheep</a>. A relatively complete, easy to understand, easy to hack parser and FullForm emitter. Based on ANTLR4, FoxySheep targets Java and Python. Written by Robert Jacobson. BSD license.</li>
-<li><a href="http://wlplugin.halirutan.de/">Mathematica IntelliJ Plugin</a>. A mature, well-tested Wolfram Language parser capable of emitting FullForm and doing various code analysis.  The parser is a beautiful example of a Pratt parser, a top-down operator precedence parsing strategy first described by Vaughan Pratt in the 70s. MIT license for the code, but also includes proprietary data that is Copyright © 2013 Wolfram Research, Inc., that is distributed under a restricted use license.</li>
-<li><a href="https://github.com/axkr/symja-parser">Symja-parser</a> is the Mathematica parser for <a href="https://bitbucket.org/axelclk/symja_android_library/wiki/Home">Symja - Java Computer Algebra Library</a>, "a general purpose Java library for symbolic mathematics" by Axel Kramer. Symja contains a Mathematica parser for a reasonable subset of Mathematica. Apache License.</li>
-<li><a href="https://github.com/cznic/wl">WL</a>: A lex/yacc based parser written in Go by by Jan Mercl. BSD license.</li>
-</ul>
-<h3 id="inactive_1">Inactive<a class="headerlink" href="#inactive_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/mattpap/mathematica-parser">Mateusz Paprocki's Mathematica Parser in Scala</a>: "A library for parsing Mathematica's programming language written in Scala. It uses parser combinators and packrat parsers from Scala's standard library. Currently only a subset of Mathematica's language is supported." MIT Licensed.</li>
-</ul>
+<p><img alt="CFG Image" src="https://i.imgur.com/wbRcNoE.png" /></p>
               
             </div>
           </div>
@@ -346,10 +334,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ProgrammingTools/" class="btn btn-neutral float-right" title="Programming Tools">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../KernelVsFE/" class="btn btn-neutral float-right" title="MMA Notebook Vs. Frontend">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Exploring-Mathematica/" class="btn btn-neutral" title="Exploring Mathematica"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../List-of-W-Language-Projects/" class="btn btn-neutral" title="List of WL Projects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -384,10 +372,10 @@
           <a href="https://github.com/WLTools/LanguageSpec/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Exploring-Mathematica/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../List-of-W-Language-Projects/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../ProgrammingTools/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../KernelVsFE/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

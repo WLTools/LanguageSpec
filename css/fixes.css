@@ -10,21 +10,20 @@
         margin-left: 250px;
     }
 
-    /* Inner shaddow on page content */
+    /* Inner shadow on page content */
     div.wy-nav-content{
         box-shadow: inset 10px 0 10px -10px #000000;
     }
 }
 
-/* Hide the scrollbar */
-.wy-side-scroll::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
-
 /* Make sure the last item in the left menu is not obscured. */
 .wy-nav-side {
     padding-bottom: 3em;
+}
+
+/* Weird edge case */
+.section {
+    z-index: 1;
 }
 
 /* Color Scheme */
@@ -95,4 +94,11 @@ div.contentinfo, div.license {
     text-align: right;
     display: inline;
     font-size: 8pt;
+}
+
+html {
+    overflow-x: scroll;
+}
+body {
+    overflow-x: scroll;
 }
