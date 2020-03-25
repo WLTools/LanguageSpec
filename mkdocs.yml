@@ -1,6 +1,6 @@
 site_name: Wolfram Language Specification
 site_author: Robert Jacobson
-copyright: 'Copyright &copy; 2018&ndash;2019 Robert Jacobson'
+copyright: 'Copyright &copy; 2018&ndash;2020 Robert Jacobson'
 site_description: Wolfram Language Specification
 repo_url: https://github.com/WLTools/LanguageSpec
 
@@ -55,25 +55,24 @@ plugins:
         prebuild_index: true
 
 nav:
-    - 'Language Specification':
-        - 'Index': 'Specification/index.md'
-        - 'Syntax':
-            - 'Index': 'Specification/Syntax/index.md'
-            - 'Number Representations': 'Specification/Syntax/Number-representations.md'
-            - 'Operator Table': 'Specification/Syntax/OperatorTable.md'
-            - 'Pseudo Operators': 'Specification/Syntax/Pseudo-operators.md'
-        - 'Semantics':
-            - 'Index': 'Specification/Semantics/index.md'
-            - 'Number Literals': 'Specification/Semantics/Number-literal-semantics.md'
-        - 'Interfaces':
-            - 'Index': 'Specification/Interfaces/index.md'
-        - 'Standard Library':
-            - 'Index': 'Specification/StandardLibrary/index.md'
+    - 'Syntax':
+        - 'Syntax Tasks': 'Specification/Syntax/index.md'
+        - 'Number Representations': 'Specification/Syntax/Number-representations.md'
+        - 'Operator Table': 'Specification/Syntax/OperatorTable.md'
+        - 'Pseudo Operators': 'Specification/Syntax/Pseudo-operators.md'
+    - 'Semantics':
+        - 'Semantics Tasks': 'Specification/Semantics/index.md'
+        - 'Number Literals': 'Specification/Semantics/Number-literal-semantics.md'
+    - 'Standard Library Tasks': 'Specification/StandardLibrary/index.md'
+    - 'Interfaces Tasks': 'Specification/Interfaces/index.md'
     - 'Resources':
         - 'Index': 'Resources/index.md'
         - 'Exploring Mathematica': 'Resources/Exploring-Mathematica.md'
         - 'List of WL Projects': 'Resources/List-of-W-Language-Projects.md'
-        - 'Homeless Content': 'Resources/Homeless-content.md'
+        - 'Programming Tools': 'Resources/ProgrammingTools.md'
+        - 'MMA Notebook Vs. Frontend': 'Resources/KernelVsFE.md'
     - 'Contributing':
        - 'How to Contribute': 'Contributing/index.md'
        - 'Style Guide': 'Contributing/Style-Guide.md'
+       - 'Homeless Content': 'Contributing/Homeless-content.md'
+    - 'Language Specification Tasks': 'Specification/index.md'

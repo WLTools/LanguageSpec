@@ -10,3 +10,4 @@
     - [ ] Parsing strategies
     - [ ] Functional language implementation
     - [ ] WL code highlighters and editors
+    - [ ] Differences between the Mathematica command line and notebook frontend.
