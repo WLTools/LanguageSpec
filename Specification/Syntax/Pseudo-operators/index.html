@@ -61,6 +61,10 @@
     <li class="toctree-l2"><a class="reference internal" href="../Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../Number-representations/#digits">Digits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Number-representations/#consequences-of-allowing-numbers-to-start-with">Consequences of allowing numbers to start with .</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
         <ul>
@@ -94,6 +98,14 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Pseudo Operators</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#precedence-of-pseudo-operators">Precedence of Pseudo-operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#precision-vs-context">Precision vs. context</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#decimal-point-versus-various-operators">Decimal point versus various operators</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -174,15 +186,25 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#number-forms">Number forms</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#parsing-identifiers-in-input">Parsing identifiers in input</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#parsing-expressions-involving">Parsing expressions involving ;;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#expressions-involving">Expressions involving .</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#obscure-grouping-symbols">Obscure grouping symbols</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#differences-that-are-semantically-equivalent">Differences that are semantically equivalent</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions">Flattening Times in arithmetic expressions</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions-with-exact-numbers">Flattening Times in arithmetic expressions with exact numbers</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#bugs">Bugs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#other-homeless-quirks">Other Homeless Quirks</a>
     </li>
     </ul>
                     </li>
@@ -327,6 +349,38 @@
 </ul>
 <p>These are pseudo-operators in the sense that their function is write-time  representation rather than runtime computation. They are lexemes that are such basic units of the language that they may be processed by Mathematica during or even prior to the lexical analysis phase of the code parsing process similar to how <code>C/C++</code> compiler drivers preprocess <code class="highlight"><span class="cp">#define</span></code>, <code class="highlight"><span class="cp">#include</span></code>, and other preprocessor directives before sending the result to the compiler.</p>
 <p>These sorts of language elements are not unique to Wolfram Language, of course, and language tool authors generally make choices about how to handle them based on their syntactic role within the language and what simplifies the software engineering task.</p>
+<h2 id="precedence-of-pseudo-operators">Precedence of Pseudo-operators<a class="headerlink" href="#precedence-of-pseudo-operators" title="Permanent link">&para;</a></h2>
+<p>There are cases in which pseudo-operators need a notion of precedence.</p>
+<h3 id="precision-vs-context">Precision vs. context<a class="headerlink" href="#precision-vs-context" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">Global`b</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="nv">b</span><span class="w"></span>
+<span class="nb">In</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">FullForm</span><span class="p">[</span><span class="m">7`</span><span class="nv">b</span><span class="p">]</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="m">7.`</span><span class="p">,</span><span class="nv">b</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>In this case, the <code>`</code> is interpreted as the precision pseudo-operator, not the context pseudo-operator.</p>
+<h3 id="decimal-point-versus-various-operators">Decimal point versus various operators<a class="headerlink" href="#decimal-point-versus-various-operators" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="m">2</span><span class="o">//.</span><span class="m">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span><span class="w"></span>
+<span class="m">2</span><span class="o">/.</span><span class="m">3</span><span class="o">-&gt;</span><span class="m">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Rule</span><span class="p">[</span><span class="nb">Times</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="nb">Power</span><span class="p">[</span><span class="m">0.3`</span><span class="p">,</span><span class="o">-</span><span class="m">1</span><span class="p">]],</span><span class="m">4</span><span class="p">]</span><span class="w"></span>
+<span class="m">1.</span><span class="o">..</span><span class="m">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">RepeatedNull</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="m">3</span><span class="p">]</span><span class="w"></span>
+<span class="o">_</span><span class="m">.1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">Optional</span><span class="p">[</span><span class="nb">Blank</span><span class="p">[]],</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="nt">x_</span><span class="m">.3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">Optional</span><span class="p">[</span><span class="nb">Pattern</span><span class="p">[</span><span class="nv">x</span><span class="p">,</span><span class="nb">Blank</span><span class="p">[]]],</span><span class="m">3</span><span class="p">]</span><span class="w"></span>
+<span class="nv">b</span><span class="o">=.</span><span class="m">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Set</span><span class="p">[</span><span class="nv">b</span><span class="p">,</span><span class="w"> </span><span class="m">0.1`</span><span class="p">]</span><span class="w"></span>
+<span class="nv">b</span><span class="o">=.</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">Unset</span><span class="p">[</span><span class="nv">b</span><span class="p">],</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="m">1.</span><span class="o">..</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">RepeatedNull</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="m">1.</span><span class="o">.</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Repeated</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="m">1.</span><span class="o">..</span><span class="m">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">RepeatedNull</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="m">1..1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">Repeated</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="m">1.</span><span class="o">...</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">$Failed</span><span class="w"></span>
+<span class="m">1.</span><span class="o">...</span><span class="m">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">RepeatedNull</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="m">0.1`</span><span class="p">]</span><span class="w"></span>
+<span class="m">1.</span><span class="o">....</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Repeated</span><span class="p">[</span><span class="nb">RepeatedNull</span><span class="p">[</span><span class="m">1</span><span class="p">]]</span><span class="w"></span>
+<span class="m">1.</span><span class="o">...</span><span class="m">.1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">Repeated</span><span class="p">[</span><span class="nb">RepeatedNull</span><span class="p">[</span><span class="m">1</span><span class="p">]],</span><span class="m">1</span><span class="p">]</span><span class="w"> </span>
+</code></pre></div>
+
+<p>The operators (each written as an example here) that DO NOT steal the <code>.</code> from a trailing digit are <code>a/.1</code>, 
+<code>a/:b=.1</code>, and <code>a=.1</code>. As noted, <code>//.</code> is inconsistent with <code>/.</code>, and the <code>Dot</code> operator <code>(a.b)</code> needs to be 
+treated as a special case. This places the “precedence” of a leading decimal point between <code>//.</code> and <code>/.</code>, which is
+ consistent with everything except the <code>Dot</code> operator. </p>
               
             </div>
           </div>

@@ -61,6 +61,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#signs-in-a-number-literal">Signs in a Number Literal</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#digits">Digits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#consequences-of-allowing-numbers-to-start-with">Consequences of allowing numbers to start with .</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#numbers-in-a-specified-base">Numbers in a specified base</a>
         <ul>
@@ -94,6 +98,14 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Pseudo-operators/">Pseudo Operators</a>
     <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../Pseudo-operators/#precedence-of-pseudo-operators">Precedence of Pseudo-operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../Pseudo-operators/#precision-vs-context">Precision vs. context</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../Pseudo-operators/#decimal-point-versus-various-operators">Decimal point versus various operators</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -174,15 +186,25 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#number-forms">Number forms</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#parsing-identifiers-in-input">Parsing identifiers in input</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#parsing-expressions-involving">Parsing expressions involving ;;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#expressions-involving">Expressions involving .</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#obscure-grouping-symbols">Obscure grouping symbols</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#differences-that-are-semantically-equivalent">Differences that are semantically equivalent</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions">Flattening Times in arithmetic expressions</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../../Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions-with-exact-numbers">Flattening Times in arithmetic expressions with exact numbers</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#bugs">Bugs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Resources/KernelVsFE/#other-homeless-quirks">Other Homeless Quirks</a>
     </li>
     </ul>
                     </li>
@@ -347,7 +369,12 @@
 <p>The exception to this rule applies not to number literals but rather to the decorations on number literals: the precision, accuracy, and exponent all accept a single (unnested) optional <code class="highlight"><span class="o">+</span><span class="w"></span></code> or <code class="highlight"><span class="o">-</span><span class="w"></span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Compatibility Warning</p>
-<p>Mathematica only accepts the ASCII <code>-</code> character and its character code synonyms <code>\:002d</code> and <code>\.2d</code> in number literal forms. The Unicode character form <code>\:2212</code>, named character <code class="highlight"><span class="nv">\[Minus]</span><span class="w"></span></code>, and corresponding Unicode literal <code class="highlight"><span class="err">−</span><span class="w"></span></code> (which renders identically to ASCII <code class="highlight"><span class="o">-</span><span class="w"></span></code>) are not allowed within number literal forms. This spec requires complying implementations to accept the ASCII <code class="highlight"><span class="o">-</span><span class="w"></span></code> in number literal decorations. However, implementations may also accept Unicode <code class="highlight"><span class="nb">Minus</span><span class="w"></span></code> anywhere an ASCII <code class="highlight"><span class="o">-</span><span class="w"></span></code> may appear. (There is no Unicode equivalent to <code class="highlight"><span class="o">+</span><span class="w"></span></code> that Mathematica recognizes, so <code class="highlight"><span class="o">+</span><span class="w"></span></code> does not have this issue.)</p>
+<p>Mathematica only accepts the ASCII <code>-</code> character and its character code synonyms <code>\:002d</code> and <code>\.2d</code> in number
+literal forms. The Unicode character form <code>\:2212</code>, named character <code class="highlight"><span class="nv">\[Minus]</span><span class="w"></span></code>, and corresponding Unicode
+literal <code class="highlight"><span class="err">−</span><span class="w"></span></code> (which renders identically to ASCII <code class="highlight"><span class="o">-</span><span class="w"></span></code>) are not allowed within number literal forms. 
+This spec requires complying implementations to accept the ASCII <code class="highlight"><span class="o">-</span><span class="w"></span></code> in number literal decorations. 
+However, implementations <em>should</em> also accept Unicode <code class="highlight"><span class="nb">Minus</span><span class="w"></span></code> anywhere an ASCII <code class="highlight"><span class="o">-</span><span class="w"></span></code> may appear. (There
+is no Unicode equivalent to <code class="highlight"><span class="o">+</span><span class="w"></span></code> that Mathematica recognizes, so <code class="highlight"><span class="o">+</span><span class="w"></span></code> does not have this issue.)</p>
 </div>
 <h2 id="digits">Digits<a class="headerlink" href="#digits" title="Permanent link">&para;</a></h2>
 <p>The most basic component of any number is the digit. The decimal digits 0 through 9 are fundamental even within number forms expressed in bases other than 10.</p>
@@ -355,7 +382,9 @@
 <span class="nl">DIGIT</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="x">0-9</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
 
-<p>Wherever a number with a point is allowed to appear, either the digits to the left of the point or the right of the point may be ommitted, but not both. Note that numbers may begin with any number of leading zeros.</p>
+<p>Wherever a number with a point is allowed to appear, either the digits to the left of the point or the right of the
+point may be omitted, but not both. This has several subtle and surprising consequences. (See the admonition.) Note
+that numbers may begin with any number of leading zeros.</p>
 <div class="highlight"><pre><span></span><code><span class="k">fragment</span><span class="w"></span>
 <span class="nl">DecimalNumber</span><span class="w"></span>
 <span class="w">    </span><span class="p">:</span><span class="w">   </span><span class="no">DIGIT</span><span class="o">+</span><span class="w"> </span><span class="s">&#39;.&#39;</span><span class="w"> </span><span class="no">DIGIT</span><span class="o">*</span><span class="w">   </span><span class="c">// We can omit numbers after the decimal point and not before, or...</span><span class="w"></span>
@@ -364,9 +393,32 @@
 <span class="w">    </span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 
-<p>Note that a negative sign is not included in the definition of <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code>.</p>
+<p>Importantly, negative sign is not included in the definition of <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code>.</p>
+<h3 id="consequences-of-allowing-numbers-to-start-with">Consequences of allowing numbers to start with <code>.</code><a class="headerlink" href="#consequences-of-allowing-numbers-to-start-with" title="Permanent link">&para;</a></h3>
+<p>Because <code>.</code> appears as part of other operators, starting a number with <code>.</code> can lead to surprising results. Consider
+ these examples:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">FullForm</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="m">1</span><span class="o">//.</span><span class="m">1</span><span class="p">]]</span><span class="w"></span>
+<span class="c">(* Hold[ReplaceRepeated[1,1]] *)</span><span class="w"></span>
+
+<span class="m">1</span><span class="o">/.</span><span class="m">1</span><span class="o">-&gt;</span><span class="m">2</span><span class="w"></span>
+<span class="c">(* Hold[Rule[Times[1,Power[0.1`,-1]],2]] *)</span><span class="w"></span>
+
+<span class="nb">FullForm</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="m">7</span><span class="o">//.</span><span class="m">9</span><span class="p">]]</span><span class="w"></span>
+<span class="c">(* Hold[0.9`[7]] *)</span><span class="w"></span>
+</code></pre></div>
+
+<p>Nonexamples:
+<div class="highlight"><pre><span></span><code><span class="m">1</span><span class="o">//.</span><span class="m">1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">0.1</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="m">1</span><span class="o">/.</span><span class="m">1</span><span class="o">-&gt;</span><span class="m">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">ReplaceAll</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="nb">Rule</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">]]</span><span class="w"></span>
+<span class="nv">a</span><span class="o">=.</span><span class="m">1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">Times</span><span class="p">[</span><span class="nb">Unset</span><span class="p">[</span><span class="nv">a</span><span class="p">],</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"></span>
+<span class="m">.3</span><span class="o">/.</span><span class="m">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">ReplaceAll</span><span class="p">[</span><span class="m">.3</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></p>
+<p>See also <a href="../Pseudo-operators/#decimal-point-versus-various-operators">Pseudo-operators</a> for details about the
+ precedence of pseudo-operators and how <code>.</code> is treated in the context of other operators.</p>
 <h2 id="numbers-in-a-specified-base">Numbers in a specified base<a class="headerlink" href="#numbers-in-a-specified-base" title="Permanent link">&para;</a></h2>
-<p>Wolfram Language also allows number literals in bases other than base 10, with letters<sup id="fnref:letters"><a class="footnote-ref" href="#fn:letters">1</a></sup> acting as the digits for bases higher than 10, up to base 36.<sup id="fnref:maxbase"><a class="footnote-ref" href="#fn:maxbase">2</a></sup> No distinction is made between lowercase and capital letters.</p>
+<p>Wolfram Language also allows number literals in bases other than base 10, with letters<sup id="fnref:letters"><a class="footnote-ref" href="#fn:letters">1</a></sup> acting as the 
+digits for bases higher than 10, up to base 36.<sup id="fnref:maxbase"><a class="footnote-ref" href="#fn:maxbase">2</a></sup> No distinction is made between lowercase and capital 
+letters.</p>
 <div class="highlight"><pre><span></span><code><span class="k">fragment</span><span class="w"></span>
 <span class="nl">DigitInAnyBase</span><span class="p">:</span><span class="w"> </span><span class="no">DIGIT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="x">a-zA-Z</span><span class="p">];</span><span class="w"></span>
 
@@ -381,10 +433,16 @@
 <span class="nl">NumberInBase</span><span class="p">:</span><span class="w"> </span><span class="no">DIGIT</span><span class="o">+</span><span class="w"> </span><span class="s">&#39;^^&#39;</span><span class="w"> </span><span class="no">NonDecimalNumber</span><span class="p">;</span><span class="w"> </span><span class="c">// Additional constraints below.</span><span class="w"></span>
 </code></pre></div>
 
-<p>The number preceding the <code class="highlight"><span class="o">^^</span><span class="w"></span></code> <a href="../Pseudo-operators/">pseudo-operator</a> specifies the base in which the following digit sequence is to be interpreted. The digit sequence is unsigned, that is, no <code class="highlight"><span class="o">-</span><span class="w"></span></code> is allowed to follow <code class="highlight"><span class="o">^^</span><span class="w"></span></code> The <code class="highlight"><span class="nl">NumberInBase</span><span class="w"></span></code> production must satisfy the following additional constraints:</p>
+<p>The number preceding the <code class="highlight"><span class="o">^^</span><span class="w"></span></code> <a href="../Pseudo-operators/">pseudo-operator</a> specifies the base in which the following 
+digit sequence is to be interpreted. The digit sequence is unsigned, that is, no <code class="highlight"><span class="o">-</span><span class="w"></span></code> is allowed to follow 
+<code class="highlight"><span class="o">^^</span><span class="w"></span></code>. A <code>.</code> may appear in the sequence according to the same rules as the base <span class="arithmatex">\(10\)</span> decimal point. The 
+<code class="highlight"><span class="nl">NumberInBase</span><span class="w"></span></code> production must satisfy the following additional constraints:</p>
 <ol>
-<li>The <code class="highlight"><span class="o">^^</span><span class="w"></span></code> must be preceded by a base that is an integer between <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(36\)</span>, itself expressed in base <span class="arithmatex">\(10\)</span>, though the base may have arbitrarily many leading zeros.</li>
-<li>The <code class="highlight"><span class="nl">NonDecimalNumber</span><span class="w"></span></code> following <code class="highlight"><span class="o">^^</span><span class="w"></span></code> may contain only digits compatible with the base. Thus a number in base <span class="arithmatex">\(n\)</span> consists of digits corresponding to the decimal numbers <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(n -1\)</span>, and each digit greater than <span class="arithmatex">\(9\)</span> is represented by a letter according to the following table.</li>
+<li>The <code class="highlight"><span class="o">^^</span><span class="w"></span></code> must be preceded by a base that is an integer between <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(36\)</span>, itself expressed in base <span class="arithmatex">\(10\)</span>
+ digits (<code class="highlight"><span class="nl">Digits</span><span class="w"></span></code>), though the base may have arbitrarily many leading zeros.</li>
+<li>The <code class="highlight"><span class="nl">NonDecimalNumber</span><span class="w"></span></code> following <code class="highlight"><span class="o">^^</span><span class="w"></span></code> may contain only digits compatible with the base. Thus a number 
+in base <span class="arithmatex">\(n\)</span> consists of digits corresponding to the decimal numbers <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(n-1\)</span>, and each digit greater than <span class="arithmatex">\(9\)</span> 
+is represented by a letter according to the following standard assignment.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="m">10</span><span class="w">  </span><span class="m">11</span><span class="w">  </span><span class="m">12</span><span class="w">  </span><span class="m">13</span><span class="w">  </span><span class="m">14</span><span class="w">  </span><span class="m">15</span><span class="w">  </span><span class="m">16</span><span class="w">  </span><span class="m">17</span><span class="w">  </span><span class="m">18</span><span class="w">  </span><span class="m">19</span><span class="w">  </span><span class="m">20</span><span class="w">  </span><span class="m">21</span><span class="w">  </span><span class="m">22</span><span class="w">  </span><span class="m">23</span><span class="w">  </span><span class="m">24</span><span class="w">  </span><span class="m">25</span><span class="w">  </span><span class="m">26</span><span class="w">  </span><span class="m">27</span><span class="w">  </span><span class="m">28</span><span class="w">  </span><span class="m">29</span><span class="w">  </span><span class="m">30</span><span class="w">  </span><span class="m">31</span><span class="w">  </span><span class="m">32</span><span class="w">  </span><span class="m">33</span><span class="w">  </span><span class="m">34</span><span class="w">  </span><span class="m">35</span><span class="w"></span>
 <span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w">   </span><span class="o">↕</span><span class="w"></span>
@@ -424,7 +482,12 @@
 <p>The output in the non examples above are those given by Mathematica v11.3.0. Implementations are encouraged to provide more consistently helpful error messages, especially for the last non example.</p>
 </div>
 <h2 id="specifying-numeric-precision-and-accuracy">Specifying numeric precision and accuracy.<a class="headerlink" href="#specifying-numeric-precision-and-accuracy" title="Permanent link">&para;</a></h2>
-<p>Precision and accuracy are related concepts in Wolfram Language. See the section <em>index.md</em> for a detailed discussion. A number literal may either specify a precision or an accuracy, but not both. A single backtick <code class="highlight"><span class="err">`</span><span class="w"></span></code> after a number specifies <em>machine precision</em>. A number followed by a single backtick and a <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code> specifies a precision of <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code>. A precision or accuracy specifier must appear before a scientific form multiplier.</p>
+<p>Precision and accuracy are related concepts in Wolfram Language. See the section 
+<em><a href="../../Semantics/Number-literal-semantics/">Number Literal Semantics</a></em> for a detailed discussion. A number 
+literal may either specify a precision or an accuracy, but not both. A single backtick <code class="highlight"><span class="err">`</span><span class="w"></span></code> after a number
+specifies <em>machine precision</em>. A number followed by a single backtick and a <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code> specifies a 
+precision of <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code>. A precision or accuracy specifier must appear before a scientific form 
+multiplier.</p>
 <div class="highlight"><pre><span></span><code><span class="k">fragment</span><span class="w"></span>
 <span class="nl">numberLiteralPrecision</span><span class="w"></span>
 <span class="w">    </span><span class="p">:</span><span class="w">   </span><span class="s">&#39;`&#39;</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="s">&#39;+&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#39;-&#39;</span><span class="o">)?</span><span class="w"> </span><span class="no">DecimalNumber</span><span class="o">)?</span><span class="w"> </span><span class="c">// Precision</span><span class="w"></span>
@@ -435,7 +498,10 @@
 <p>Note that if a sign is given for precision, it must be followed by a <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Mathematica's <code class="highlight"><span class="nb">Precision</span><span class="w"></span></code> and <code class="highlight"><span class="nb">Accuracy</span><span class="w"></span></code> functions can return <code class="highlight"><span class="o">∞</span><span class="w"></span></code> for some inputs. However, <code class="highlight"><span class="o">∞</span><span class="w"></span></code> cannot be used in a number literal.</p>
+<p>Mathematica's <code class="highlight"><span class="nb">Precision</span><span class="w"></span></code> and <code class="highlight"><span class="nb">Accuracy</span><span class="w"></span></code> functions can return <code class="highlight"><span class="o">∞</span><span class="w"></span></code> for some inputs. However, <code class="highlight"><span class="o">∞</span><span class="w"></span></code> cannot be used in a number literal and is never interpreted as a digit.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 </div>
 <h3 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="m">123`</span><span class="w"></span>
@@ -461,7 +527,7 @@
 </code></pre></div>
 
 <h3 id="non-examples_1">Non Examples<a class="headerlink" href="#non-examples_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="m">16^^9</span><span class="nv">fe</span><span class="o">.</span><span class="nv">c3`\[Minus]</span><span class="m">7</span><span class="w"> </span><span class="c">(* Treated as subtraction. *)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="m">16^^9</span><span class="nv">fe</span><span class="o">.</span><span class="nv">c3`\[Minus]</span><span class="m">7</span><span class="w"> </span><span class="c">(* Treated as subtraction. Note: Cannot be copy+pasted into FE. *)</span><span class="w"></span>
 <span class="c">(* 2551.76 *)</span><span class="w"></span>
 
 <span class="m">3.98`</span><span class="err">`</span><span class="w"></span>
@@ -496,10 +562,11 @@
 <span class="c">(* Syntax::tsntxi: &quot;2.78`26`10&quot; is incomplete; more input is needed. *)</span><span class="w"></span>
 <span class="c">(* Syntax::sntxf: &quot;2.78``26&quot; cannot be followed by &quot;`10&quot;. *)</span><span class="w"></span>
 
-<span class="m">3`</span><span class="nv">\[Infinity]</span><span class="w"> </span><span class="c">(* Interpreted as 3.0 * \[Infinity] *)</span><span class="w"></span>
+<span class="m">3`</span><span class="nv">\[Infinity]</span><span class="w"> </span><span class="c">(* Interpreted correctly as 3.0 * \[Infinity] *)</span><span class="w"></span>
 <span class="c">(* ∞ *)</span><span class="w"></span>
 
-<span class="m">3`</span><span class="nv">`\[Infinity]</span><span class="w"> </span><span class="c">(* WARNING: Crashes command line interface leaving zombie kernel running at 100% of CPU. *)</span><span class="w"></span>
+<span class="m">3`</span><span class="nv">`\[Infinity]</span><span class="w"> </span><span class="c">(* This has no correct interpretation. *)</span><span class="w"></span>
+<span class="c">(* WARNING: Crashes command line interface leaving zombie kernel running at 100% of CPU. *)</span><span class="w"></span>
 <span class="c">(* $CharacterEncoding::utf8: The byte sequence {249} could not be interpreted as a character in the UTF-8 character encoding. *)</span><span class="w"></span>
 </code></pre></div>
 
@@ -514,7 +581,7 @@
 <p>Observe that</p>
 <ol>
 <li>This form does not contain <code class="highlight"><span class="nl">DecimalNumber</span><span class="w"></span></code> but rather <code class="highlight"><span class="nl">DIGITS</span><span class="w"></span></code>, which is a string of digits in base <span class="arithmatex">\(10\)</span>.</li>
-<li>The <code class="highlight"><span class="o">*^</span><span class="w"></span></code> must be followed by <code class="highlight"><span class="nl">DIGITS</span><span class="w"></span></code>.</li>
+<li>The <code class="highlight"><span class="o">*^</span><span class="w"></span></code> must be followed by <code class="highlight"><span class="nl">DIGITS</span><span class="w"></span></code> with an optional sign.</li>
 </ol>
 <h3 id="examples_2">Examples<a class="headerlink" href="#examples_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="m">3.98`5*^3</span><span class="w"></span>
@@ -580,7 +647,7 @@
 <p class="admonition-title">Important</p>
 <p>This regular expression does not require that the digits be compatible with the given base. For example, it will match <code class="highlight"><span class="m">7^^2</span><span class="nv">a</span><span class="w"></span></code> even though <code>a</code> is not a digit in base <span class="arithmatex">\(7\)</span>. However, it does match only bases between <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(36\)</span>.</p>
 </div>
-<h2 id="additional-examples-and-non-examples">Additional Examples and Non Examples<a class="headerlink" href="#additional-examples-and-non-examples" title="Permanent link">&para;</a></h2>
+<h2 id="additional-examples">Additional Examples<a class="headerlink" href="#additional-examples" title="Permanent link">&para;</a></h2>
 <h3 id="examples-using-special-character-input-forms">Examples using special character input forms<a class="headerlink" href="#examples-using-special-character-input-forms" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="m">4</span><span class="err">\</span><span class="m">.2</span><span class="nv">b5</span><span class="w"> </span><span class="c">(* ASCII plus is 0x2B. *)</span><span class="w"></span>
 <span class="c">(* 9 *)</span><span class="w"></span>
@@ -622,6 +689,18 @@
 <span class="c">(* 15 *)</span><span class="w"></span>
 </code></pre></div>
 
+<div class="admonition example">
+<p class="admonition-title">An interesting example</p>
+<p>Consider the behavior of <code class="highlight"><span class="m">3`</span><span class="nv">\[Infinity]</span><span class="w"></span></code>:
+<div class="highlight"><pre><span></span><code><span class="m">3`</span><span class="nv">\[Infinity]</span><span class="w"> </span><span class="c">(* Interpreted as 3.0 * \[Infinity] *)</span><span class="w"></span>
+<span class="c">(* ∞ *)</span><span class="w"></span>
+</code></pre></div>
+A previous version of this document declared the above as incorrect behavior. However, it is correct! As 
+<code>\[Infinity]</code> is not a digit, the parsing of the number <code>3`</code> stops when the parser sees the <code>\[Infinity]</code> 
+(equivalently, the <code>∞</code>). In contrast to the malformed <code>3``</code>, the form <code>3`</code> is a legitimate number form: it
+ is the real number <span class="arithmatex">\(3\)</span> with machine precision. The parser then parses <code>\[Infinity]</code>. Since <code>3`</code> is adjacent to
+  <code>\[Infinity]</code>, the expression is interpreted as <code>3`</code> multiplied by <code>\[Infinity]</code>.</p>
+</div>
 <h3 id="example-due-to-richard-fateman">Example due to Richard Fateman<a class="headerlink" href="#example-due-to-richard-fateman" title="Permanent link">&para;</a></h3>
 <p>This example is from:</p>
 <blockquote>
@@ -647,7 +726,11 @@
 <p>Here we mean letters in the <a href="https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet">ISO basic Latin alphabet</a>, not to be confused with the letter-like forms of Mathematica.&#160;<a class="footnote-backref" href="#fnref:letters" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:maxbase">
-<p>The limitation to a maximum base of 36 is, of course, due to the fact that there are only 10 decimal digits and 26 letters, making 36 different possible digits to use in a number literal. An implementation could conceivably allow larger integral bases despite an inability to express every digit in the base, e.g., <code class="highlight"><span class="m">100^^25</span><span class="o">==</span><span class="m">205</span><span class="w"></span></code>. Such number forms would be confusing, to say the least, and so are disallowed by this spec.&#160;<a class="footnote-backref" href="#fnref:maxbase" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>The limitation to a maximum base of 36 is, of course, due to the fact that there are only 10 decimal
+ digits and 26 letters in the English alphabet, making 36 different possible digits to use in a number literal. An
+  implementation could conceivably allow larger integral bases despite an inability to express every digit in the 
+  base, e.g., <code class="highlight"><span class="m">100^^25</span><span class="o">==</span><span class="m">205</span><span class="w"></span></code>. Such number forms would be confusing, to say the least, and so are disallowed 
+  by this spec.&#160;<a class="footnote-backref" href="#fnref:maxbase" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

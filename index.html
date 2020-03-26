@@ -61,6 +61,10 @@
     <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#digits">Digits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Number-representations/#consequences-of-allowing-numbers-to-start-with">Consequences of allowing numbers to start with .</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
         <ul>
@@ -94,6 +98,14 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
     <ul>
+    <li class="toctree-l2"><a class="reference internal" href="Specification/Syntax/Pseudo-operators/#precedence-of-pseudo-operators">Precedence of Pseudo-operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Pseudo-operators/#precision-vs-context">Precision vs. context</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Specification/Syntax/Pseudo-operators/#decimal-point-versus-various-operators">Decimal point versus various operators</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -174,15 +186,25 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#number-forms">Number forms</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#parsing-identifiers-in-input">Parsing identifiers in input</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#parsing-expressions-involving">Parsing expressions involving ;;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#expressions-involving">Expressions involving .</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#obscure-grouping-symbols">Obscure grouping symbols</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="Resources/KernelVsFE/#differences-that-are-semantically-equivalent">Differences that are semantically equivalent</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions">Flattening Times in arithmetic expressions</a>
+    <li class="toctree-l3"><a class="reference internal" href="Resources/KernelVsFE/#flattening-times-in-arithmetic-expressions-with-exact-numbers">Flattening Times in arithmetic expressions with exact numbers</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="Resources/KernelVsFE/#bugs">Bugs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="Resources/KernelVsFE/#other-homeless-quirks">Other Homeless Quirks</a>
     </li>
     </ul>
                     </li>
@@ -538,5 +560,5 @@ window.addEventListener("load", closeDetails);
 
 <!--
 MkDocs version : 1.1
-Build Date UTC : 2020-03-25 04:10:19
+Build Date UTC : 2020-03-26 03:39:48
 -->

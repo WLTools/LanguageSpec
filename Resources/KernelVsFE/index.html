@@ -61,6 +61,10 @@
     <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#signs-in-a-number-literal">Signs in a Number Literal</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#digits">Digits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#consequences-of-allowing-numbers-to-start-with">Consequences of allowing numbers to start with .</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Number-representations/#numbers-in-a-specified-base">Numbers in a specified base</a>
         <ul>
@@ -94,6 +98,14 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/">Pseudo Operators</a>
     <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/#precedence-of-pseudo-operators">Precedence of Pseudo-operators</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/#precision-vs-context">Precision vs. context</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Specification/Syntax/Pseudo-operators/#decimal-point-versus-various-operators">Decimal point versus various operators</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -174,15 +186,25 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#number-forms">Number forms</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parsing-identifiers-in-input">Parsing identifiers in input</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parsing-expressions-involving">Parsing expressions involving ;;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#expressions-involving">Expressions involving .</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#obscure-grouping-symbols">Obscure grouping symbols</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#differences-that-are-semantically-equivalent">Differences that are semantically equivalent</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#flattening-times-in-arithmetic-expressions">Flattening Times in arithmetic expressions</a>
+    <li class="toctree-l3"><a class="reference internal" href="#flattening-times-in-arithmetic-expressions-with-exact-numbers">Flattening Times in arithmetic expressions with exact numbers</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#bugs">Bugs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-homeless-quirks">Other Homeless Quirks</a>
     </li>
     </ul>
                     </li>
@@ -358,12 +380,20 @@ vs.
 <span class="nb">Out</span><span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">$Failed</span><span class="w"></span>
 </code></pre></div></p>
 <p>If the expressions within the strings are entered as expressions in the FE, it is a syntax error. However, only the
- second form of <code class="highlight"><span class="nb">ToExpression</span><span class="w"></span></code> gives a syntax error in both the FE and command line.</p>
+ second form of <code class="highlight"><span class="nb">ToExpression</span><span class="w"></span></code> gives a syntax error in the command line as well.</p>
 <h3 id="number-forms">Number forms<a class="headerlink" href="#number-forms" title="Permanent link">&para;</a></h3>
 <p>These number forms should be accepted but fail differently in the FE vs. CL.</p>
 <div class="highlight"><pre><span></span><code><span class="m">2`</span><span class="err">`\</span><span class="o">:</span><span class="m">22127</span><span class="w"> </span><span class="c">(* Differs in command line vs FE vs `ToExpression`. *)</span><span class="w"></span>
 <span class="c">(* 2 *)</span><span class="w"></span>
+<span class="c">(* Syntax::snthex: 4 hexadecimal digits are required after \: to construct a 16-bit character. *)</span><span class="w"></span>
 <span class="c">(* Syntax::tsntxi: &quot;2.\[Minus]7&quot; is incomplete; more input is needed. *)</span><span class="w"></span>
+
+<span class="nb">Accuracy</span><span class="p">[</span><span class="m">2`</span><span class="err">`\</span><span class="o">:</span><span class="m">22127</span><span class="p">]</span><span class="w"> </span><span class="c">(* Same as above. Fails in both FE and CL the same, `ToExpression` different. *)</span><span class="w"></span>
+<span class="c">(* ToExpression::sntx: </span>
+<span class="c">   Invalid syntax in or before &quot;Accuracy[2``\[Minus]7]&quot;.</span>
+<span class="c">                                         ^  </span>
+<span class="c"> *)</span><span class="w"></span>
+<span class="c">(* Syntax::sntxf: &quot;Accuracy&quot; cannot be followed by &quot;[2``\:22127]&quot;. *)</span><span class="w"></span>
 
 <span class="m">2`</span><span class="nv">`\[Minus]</span><span class="m">7</span><span class="w"> </span><span class="c">(* WARNING: Crashes command line interface leaving zombie kernel running at 100% of CPU. *)</span><span class="w"></span>
 <span class="c">(* Syntax::tsntxi: &quot;2.\[Minus]7&quot; is incomplete; more input is needed. *)</span><span class="w"></span>
@@ -390,13 +420,105 @@ vs.
 <p>Number forms whose interpretation is debatable but which fail differently:
 <div class="highlight"><pre><span></span><code><span class="m">3`</span><span class="nv">`\[Infinity]</span><span class="w"> </span><span class="c">(* WARNING: Crashes command line interface leaving zombie kernel running at 100% of CPU. *)</span><span class="w"></span>
 <span class="c">(* $CharacterEncoding::utf8: The byte sequence {249} could not be interpreted as a character in the UTF-8 character encoding. *)</span><span class="w"></span>
+
+<span class="m">1.0*^1.9</span><span class="w"> </span><span class="c">(* Parsed by FE as (1.0*^1)*0.9. *)</span><span class="w"></span>
+<span class="c">(* General::ifexp: The exponent 1.9 is not an integer.</span>
+<span class="c">Syntax::sntxb: Expression cannot begin with &quot;1.0*^1.9&quot;. *)</span><span class="w"></span>
+<span class="c">(* 9. *)</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="parsing-identifiers-in-input">Parsing identifiers in input<a class="headerlink" href="#parsing-identifiers-in-input" title="Permanent link">&para;</a></h3>
+<p>Consider the following command line session:
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">a\[RawEscape]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w">                                                       </span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w"></span>
+
+<span class="nb">In</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">a\[RawEscape]</span><span class="o">^</span><span class="m">2</span><span class="w">                                                         </span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="m">49</span><span class="w"></span>
+</code></pre></div></p>
+<p>It is impossible to do the same in the FE, as the FE insists on separating the <code>a</code> and <code>\[RawEscape]</code> and then doesn't
+ know what to do with the input. Copy+pasting as plain text, as I have done below, automatically inserts a space
+  between the <code>a</code> and <code>\[RawEscape]</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">\[RawEscape]</span><span class="o">=</span><span class="m">7</span><span class="w"></span>
+<span class="nv">During</span><span class="w"> </span><span class="nv">evaluation</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nb">In</span><span class="p">[</span><span class="m">5</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">Set</span><span class="o">::</span><span class="ne">write</span><span class="o">:</span><span class="w"> </span><span class="nv">Tag</span><span class="w"> </span><span class="nb">Times</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">\[RawEscape]</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nb">Protected</span><span class="o">.</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w"></span>
+<span class="nb">In</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">\[RawEscape]</span><span class="o">^</span><span class="m">2</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="nv">\[RawEscape]</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="nv">a</span><span class="w"></span>
 </code></pre></div>
-Note that this behavior is inconsistent with the behavior of <code class="highlight"><span class="m">3`</span><span class="nv">`\[Infinity]</span><span class="w"></span></code>, which is also incorrect:
-<div class="highlight"><pre><span></span><code><span class="m">3`</span><span class="nv">\[Infinity]</span><span class="w"> </span><span class="c">(* Interpreted as 3.0 * \[Infinity] *)</span><span class="w"></span>
-<span class="c">(* ∞ *)</span><span class="w"></span>
+
+<p>To see what the FE is doing, compare
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">MathLink`CallFrontEnd</span><span class="p">[</span><span class="w"> </span><span class="nv">FrontEnd`UndocumentedTestFEParserPacket</span><span class="p">[</span><span class="s">&quot;a\[RawEscape]a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">False</span><span class="p">]]</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">BoxData</span><span class="p">[</span><span class="nb">RowBox</span><span class="p">[</span><span class="nb">List</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;\[RawEscape]a&quot;</span><span class="p">]]],</span><span class="nb">StandardForm</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+to
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">MathLink`CallFrontEnd</span><span class="p">[</span><span class="w"> </span><span class="nv">FrontEnd`UndocumentedTestFEParserPacket</span><span class="p">[</span><span class="s">&quot;a\[Alpha]a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">False</span><span class="p">]]</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">BoxData</span><span class="p">[</span><span class="s">&quot;a\[Alpha]a&quot;</span><span class="p">],</span><span class="nb">StandardForm</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></p>
+<p>You can, however, begin an identifier with <code>\[RawEscape]</code> in the FE:
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">\[RawEscape]a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w">                                                       </span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w"></span>
+
+<span class="nb">In</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nv">\[RawEscape]a</span><span class="o">^</span><span class="m">2</span><span class="w">                                                         </span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="m">49</span><span class="w"></span>
+</code></pre></div></p>
+<p>A similar but distinct phenomenon happens with <code>\[LongDash]</code>. The difference is, the FE treats <code>a\[LongDash]b</code> as 
+three symbols multiplied together, whereas it interprets <code>a\[RawEscape]b</code> as <code>Times[a,\[RawEscape]b]</code>.
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a\[LongDash]b</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Times</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nv">\[LongDash]</span><span class="p">,</span><span class="nv">b</span><span class="p">]]</span><span class="w"></span>
+<span class="nb">In</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">ToHeldExpression</span><span class="p">[</span><span class="s">&quot;a\[LongDash]b&quot;</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nv">a\[LongDash]b</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>"What is a valid identifier in Mathematica?" is currently an open question. All known methods of determining this, 
+including <code>SymbolNameQ</code> and <code>UnicodeCharacters.tr</code>, do not provide correct answers.</p>
+</div>
+<h3 id="parsing-expressions-involving">Parsing expressions involving <code>;;</code><a class="headerlink" href="#parsing-expressions-involving" title="Permanent link">&para;</a></h3>
+<p>ToDo: Is this caused by differences in precedence or by incorrect input parsing? </p>
+<div class="highlight"><pre><span></span><code><span class="nb">In</span><span class="p">[</span><span class="m">15</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">FullForm</span><span class="p">[</span><span class="nv">a</span><span class="o">;;</span><span class="nv">\[Intersection]a\[SquareIntersection]</span><span class="o">;;</span><span class="nv">a</span><span class="p">]</span><span class="w"></span>
+<span class="nb">Syntax</span><span class="o">::</span><span class="ne">sntxf</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;a;;\[Intersection]a\[SquareIntersection]&quot;</span><span class="w"> </span><span class="nv">cannot</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">followed</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="s">&quot;;;a&quot;</span><span class="o">.</span><span class="w"></span>
+
+<span class="nb">In</span><span class="p">[</span><span class="m">13</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;a;;\[Intersection]a\[SquareIntersection];;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">StandardForm</span><span class="p">,</span><span class="w"> </span><span class="nb">Hold</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">13</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">SquareIntersection</span><span class="p">[</span><span class="nb">Intersection</span><span class="p">[</span><span class="nb">Span</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nb">All</span><span class="p">],</span><span class="nv">a</span><span class="p">],</span><span class="nb">Span</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="nv">a</span><span class="p">]]]</span><span class="w"></span>
+
+<span class="nb">In</span><span class="p">[</span><span class="m">15</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">FullForm</span><span class="p">[</span><span class="nv">a</span><span class="o">;;</span><span class="nv">\[Intersection]b</span><span class="p">]</span><span class="w"></span>
+<span class="nb">Syntax</span><span class="o">::</span><span class="ne">sntxf</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;a;;&quot;</span><span class="w"> </span><span class="nv">cannot</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">followed</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="s">&quot;\[Intersection]b&quot;</span><span class="o">.</span><span class="w"></span>
+
+<span class="nb">In</span><span class="p">[</span><span class="m">14</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;a;;\[Intersection]b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">StandardForm</span><span class="p">,</span><span class="w"> </span><span class="nb">Hold</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"></span>
+<span class="nb">Out</span><span class="p">[</span><span class="m">14</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Intersection</span><span class="p">[</span><span class="nb">Span</span><span class="p">[</span><span class="nv">a</span><span class="p">,</span><span class="nb">All</span><span class="p">],</span><span class="nv">b</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="expressions-involving">Expressions involving <code>.</code><a class="headerlink" href="#expressions-involving" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nv">b</span><span class="o">=...</span><span class="m">1</span><span class="w"></span>
+<span class="c">(* Times[Repeated[Unset[b]], 1] *)</span><span class="w"></span>
+<span class="c">(* Syntax::sntxf: &quot;b=&quot; cannot be followed by &quot;...1&quot;. *)</span><span class="w"></span>
+</code></pre></div>
+
+<p>The operators (each written as an example here) that DO NOT steal the <code>.</code> from a trailing digit are <code>a/.1</code>, 
+<code>a/:b=.1</code>, and <code>a=.1</code>. As noted, <code>//.</code> is inconsistent with <code>/.</code>, and the <code>Dot</code> operator <code>(a.b)</code> needs to be 
+treated as a special case. This places the “precedence” of a leading decimal point between <code>//.</code> and <code>/.</code>, which is
+ consistent with everything except the <code>Dot</code> operator. </p>
+<h3 id="obscure-grouping-symbols">Obscure grouping symbols<a class="headerlink" href="#obscure-grouping-symbols" title="Permanent link">&para;</a></h3>
+<p>The obscure grouping symbols in <code>UnicodeCharacters.tr</code> are sometimes treated as parentheses, sometimes as symbols,
+but don’t go away in the output. Other times they aren't parsed at all.
+<div class="highlight"><pre><span></span><code><span class="m">4</span><span class="o">*</span><span class="err">〔</span><span class="m">3</span><span class="o">+</span><span class="m">2</span><span class="err">〕</span><span class="w"> </span><span class="c">(* Cannot be copy+pasted into my terminal without special chars disappearing. *)</span><span class="w"></span>
+<span class="c">(* 14 *)</span><span class="w"></span>
+<span class="c">(* 20 〔 〕*)</span><span class="w"></span>
+
+<span class="m">4</span><span class="o">*</span><span class="err">\</span><span class="o">:</span><span class="m">3014</span><span class="w"> </span><span class="m">3</span><span class="o">+</span><span class="m">2</span><span class="w"> </span><span class="err">\</span><span class="o">:</span><span class="m">3015</span><span class="w">                                                     </span>
+<span class="c">(* 20 〔 〕 *)</span><span class="w"></span>
+<span class="c">(* 12 〔 + 2 *)</span><span class="w"></span>
+
+<span class="nb">FullForm</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="m">4</span><span class="o">*</span><span class="err">\</span><span class="o">:</span><span class="m">3014</span><span class="w"> </span><span class="m">3</span><span class="o">+</span><span class="m">2</span><span class="w"> </span><span class="err">\</span><span class="o">:</span><span class="m">3015</span><span class="w"> </span><span class="p">]</span><span class="w">  </span><span class="c">(* Note the inconsistency of the CL, which cannot parse this.. *)</span><span class="w">                 </span>
+<span class="c">(* Hold[Times[4,Times[\:3014,Plus[3,2],\:3015]]] *)</span><span class="w"></span>
+<span class="c">(* Syntax::sntxi: Incomplete expression; more input is needed . *)</span><span class="w"></span>
+
+<span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;4*〔3+2〕&quot;</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w">  </span><span class="c">(* Can you spot where the `3` goes? *)</span><span class="w"></span>
+<span class="c">(* Plus[Times[2,\:3015],Times[4,\:30143]] *)</span><span class="w"></span>
+
+<span class="nb">ToExpression</span><span class="p">[</span><span class="s">&quot;4*〔3+2〕&quot;</span><span class="p">]</span><span class="w"> </span><span class="c">(* This is where the 3 goes: The `〔3` is treated as an identifier.  *)</span><span class="w"></span>
+<span class="c">(* ) 2 〕+4 〔3 *)</span><span class="w"></span>
 </code></pre></div></p>
 <h2 id="differences-that-are-semantically-equivalent">Differences that are semantically equivalent<a class="headerlink" href="#differences-that-are-semantically-equivalent" title="Permanent link">&para;</a></h2>
-<h3 id="flattening-times-in-arithmetic-expressions">Flattening <code class="highlight"><span class="nb">Times</span><span class="w"></span></code> in arithmetic expressions<a class="headerlink" href="#flattening-times-in-arithmetic-expressions" title="Permanent link">&para;</a></h3>
+<h3 id="flattening-times-in-arithmetic-expressions-with-exact-numbers">Flattening <code class="highlight"><span class="nb">Times</span><span class="w"></span></code> in arithmetic expressions with exact numbers<a class="headerlink" href="#flattening-times-in-arithmetic-expressions-with-exact-numbers" title="Permanent link">&para;</a></h3>
 <p>Command line Mathematica and Notebook Mathematica produce different output for <code class="highlight"><span class="nb">FullForm</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="o">-+</span><span class="nv">x</span><span class="w"> </span><span class="m">2</span><span class="p">]]</span><span class="w"></span></code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">Notebook</span><span class="p">)</span><span class="w"> </span><span class="nb">In</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">:=</span><span class="w"> </span><span class="nb">FullForm</span><span class="p">[</span><span class="nb">Hold</span><span class="p">[</span><span class="o">-+</span><span class="nv">x</span><span class="w"> </span><span class="m">2</span><span class="p">]]</span><span class="w"></span>
 <span class="p">(</span><span class="nb">Notebook</span><span class="p">)</span><span class="w"> </span><span class="nb">Out</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="o">=</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Times</span><span class="p">[</span><span class="nb">Times</span><span class="p">[</span><span class="o">-</span><span class="m">1</span><span class="p">,</span><span class="nb">Plus</span><span class="p">[</span><span class="nv">x</span><span class="p">]],</span><span class="m">2</span><span class="p">]]</span><span class="w"></span>
@@ -431,18 +553,25 @@ Mathematica doesn't simplify the multiplication by <code class="highlight"><span
 
 <h2 id="bugs">Bugs<a class="headerlink" href="#bugs" title="Permanent link">&para;</a></h2>
 <p>These aren't differences between interfaces. They're just bugs.</p>
-<p>The following should not be accepted: 
-<div class="highlight"><pre><span></span><code><span class="m">3.000000000000000000`</span><span class="o">-</span><span class="m">7</span><span class="w"></span>
-<span class="c">(* 0. *)</span><span class="w"></span>
-</code></pre></div></p>
 <p>This is interpreted incorrectly:
-<div class="highlight"><pre><span></span><code><span class="m">16^^9</span><span class="nv">fe</span><span class="o">.</span><span class="nv">c3`\[Minus]</span><span class="m">7</span><span class="w"> </span><span class="c">(* Treated as subtraction. *)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="m">16^^9</span><span class="nv">fe</span><span class="o">.</span><span class="nv">c3`\[Minus]</span><span class="m">7</span><span class="w"> </span><span class="c">(* Treated as subtraction. Note: Cannot be copy+pasted into FE. *)</span><span class="w"></span>
 <span class="c">(* 2551.76 *)</span><span class="w"></span>
 </code></pre></div></p>
-<p>The interpretation of the following is up for debate, but the output given is clearly incorrect:
-<div class="highlight"><pre><span></span><code><span class="m">3`</span><span class="nv">\[Infinity]</span><span class="w"> </span><span class="c">(* Interpreted as 3.0 * \[Infinity] *)</span><span class="w"></span>
-<span class="c">(* ∞ *)</span><span class="w"></span>
+<p>This is fixed in version 12:
+<div class="highlight"><pre><span></span><code><span class="o">+;;;</span><span class="w"></span>
 </code></pre></div></p>
+<p>Crash the front end:
+<div class="highlight"><pre><span></span><code><span class="nb">FrontEndExecute</span><span class="o">@</span><span class="nv">ReparseBoxStructurePacket</span><span class="p">[</span><span class="nb">Cell</span><span class="p">[</span><span class="m">1</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div></p>
+<p>(See the sections on number forms above for more ways to crash Mathematica.)</p>
+<h2 id="other-homeless-quirks">Other Homeless Quirks<a class="headerlink" href="#other-homeless-quirks" title="Permanent link">&para;</a></h2>
+<p>The expression <code>lhs/.1-&gt;2</code> is division by 0.1,  but <code>lhs /. 1 -&gt; 2</code> is <code>ReplaceAll</code>. It contradicts two other similar 
+forms. Compare
+<div class="highlight"><pre><span></span><code><span class="nb">ToHeldExpression</span><span class="p">[</span><span class="s">&quot;1/.1&quot;</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Times</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="nb">Power</span><span class="p">[</span><span class="m">0.1`</span><span class="p">,</span><span class="o">-</span><span class="m">1</span><span class="p">]]]</span><span class="w"></span>
+<span class="nb">ToHeldExpression</span><span class="p">[</span><span class="s">&quot;1//.1&quot;</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w">  </span><span class="o">--&gt;</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">ReplaceRepeated</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]]</span><span class="w"></span>
+<span class="nb">ToHeldExpression</span><span class="p">[</span><span class="s">&quot;1...1&quot;</span><span class="p">]</span><span class="o">//</span><span class="nb">FullForm</span><span class="w">  </span><span class="o">--&gt;</span><span class="w"> </span><span class="nb">Hold</span><span class="p">[</span><span class="nb">Times</span><span class="p">[</span><span class="nb">RepeatedNull</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="m">1</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div></p>
+<p>Operators greedily consume tokens - except in the case of <code>/.</code>.</p>
               
             </div>
           </div>
